@@ -1,0 +1,54 @@
+{
+  "mqe_riemann_validation": {
+    "rnr_radical_proxy": {
+      "mechanism_name": "rnr_radical_proxy",
+      "N_orbitals": 52,
+      "M_steps": 4,
+      "m": 4,
+      "scaffold_class": "Group C",
+      "s_value": 0.041359872668661715,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "1": {
+          "step_label": "Janus (exact) E_1",
+          "geometry": "step_01",
+          "E_tower": -9.742547830207052,
+          "E_ref_total": -9.742547830207052,
+          "E_riemann": -9.74350720114464,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group C",
+          "s_value": 0.041359872668661715,
+          "residual_mHa": 0.9593709375881332,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "3": {
+          "step_label": "E_3 (tower)",
+          "geometry": "RNR_Radical_step_3_SH=1.34A",
+          "E_tower": -19.48701440228928,
+          "n_orbs": 52,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -9.742547830207052,
+        -15.443093539320802,
+        -19.48701440228928
+      ],
+      "E_ref_final": -19.48701440228928,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/rnr_radical_proxy/k15_rnr_radical_proxy",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 52,
+  "timestamp": "2026-06-17T02:05:08Z"
+}

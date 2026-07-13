@@ -1,0 +1,56 @@
+{
+  "mqe_riemann_validation": {
+    "cyp450_metabolism": {
+      "mechanism_name": "cyp450_metabolism",
+      "N_orbitals": 65,
+      "M_steps": 6,
+      "m": 4,
+      "scaffold_class": "Group B",
+      "s_value": 0.08115861762629879,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "3": {
+          "step_label": "Janus (exact) E_3",
+          "geometry": "step_03",
+          "E_tower": -57.35691792567902,
+          "E_ref_total": -57.35691792567902,
+          "E_riemann": -57.35773765154389,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group B",
+          "s_value": 0.08115861762629879,
+          "residual_mHa": 0.8197258648721117,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "5": {
+          "step_label": "E_5 (tower)",
+          "geometry": "CYP450_step_5",
+          "E_tower": -74.13380047772146,
+          "n_orbs": 65,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -28.67886882577195,
+        -45.45493165194952,
+        -57.35691792567902,
+        -66.59027125614922,
+        -74.13380047772146
+      ],
+      "E_ref_final": -74.13380047772146,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/cyp450_metabolism/k18_cyp450_metabolism",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 65,
+  "timestamp": "2026-06-17T07:39:19Z"
+}

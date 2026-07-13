@@ -1,0 +1,58 @@
+{
+  "mqe_riemann_validation": {
+    "photocatalytic_n2": {
+      "mechanism_name": "photocatalytic_n2",
+      "N_orbitals": 50,
+      "M_steps": 8,
+      "m": 8,
+      "scaffold_class": "Group A",
+      "s_value": 0.0409038106066177,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "3": {
+          "step_label": "Janus (exact) E_3",
+          "geometry": "step_03",
+          "E_tower": -13.626078677646994,
+          "E_ref_total": -13.626078677646994,
+          "E_riemann": -13.62745900046232,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group A",
+          "s_value": 0.0409038106066177,
+          "residual_mHa": 1.3803228153257407,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "7": {
+          "step_label": "E_7 (tower)",
+          "geometry": "BL=1.556 \u00c5",
+          "E_tower": -20.441188500693478,
+          "n_orbs": 50,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -6.813729500231159,
+        -10.799505747923893,
+        -13.626078677646994,
+        -15.820989957549555,
+        -17.613235248155053,
+        -19.128557050043046,
+        -20.441188500693478
+      ],
+      "E_ref_final": -20.441188500693478,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/photocatalytic_n2/k15_photocatalytic_n2",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 50,
+  "timestamp": "2026-06-17T11:18:14Z"
+}

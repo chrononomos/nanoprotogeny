@@ -1,0 +1,2440 @@
+{
+  "generated_at": "2026-06-20T12:51:03.460080+00:00",
+  "mqe_article_reference": "nanoprotogeny.theory.mqe v2026.05",
+  "temperature_K": 298.15,
+  "mechanisms": {
+    "anammox_proxy": {
+      "mechanism": "anammox_proxy",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_anammox_proxy",
+      "tower_k": 15,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 45,
+        "ncas": 45
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 7.003,
+        "v_nuc_bohr_per_au": 0.00027196087078885033,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8809907827647123,
+        "dE_barrier_kcal_per_mol": 0.552829997498215,
+        "dE_barrier_Ha": 0.0008809907827647123,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8809907827647123,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.742626210361875
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2443624434188.145,
+        "log10_k_MQE": 12.388034459061064,
+        "half_life_s": 4.092281882638131e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "assimilatory_nr": {
+      "mechanism": "assimilatory_nr",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_assimilatory_nr",
+      "tower_k": 15,
+      "janus_step": 3,
+      "all_janus_steps": [
+        3
+      ],
+      "cas": {
+        "nelec_active": 51,
+        "ncas": 51
+      },
+      "spectral_class": "Group A",
+      "m_modulus": 8,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 115.53283408203623,
+        "dF_used_Ha_per_bohr": 115.53283408203623,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 13.11,
+        "v_nuc_bohr_per_au": 0.0001987683077986804,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=8)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 3,
+        "delta_t_m": 0.014142135623730949,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.2758594019430802,
+        "dE_barrier_kcal_per_mol": 0.8006137677976611,
+        "dE_barrier_Ha": 0.0012758594019430802,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.2758594019430802,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -13.626183141060377
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1608450055408.35,
+        "log10_k_MQE": 12.206407580004969,
+        "half_life_s": 6.217165380034894e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "assimilatory_nr_m4": {
+      "mechanism": "assimilatory_nr_m4",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_assimilatory_nr_m4",
+      "tower_k": 18,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 57,
+        "ncas": 57
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 2091.6274382335923,
+        "dF_used_Ha_per_bohr": 2091.6274382335923,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.826875737068633,
+        "dE_barrier_kcal_per_mol": 0.5188722976424957,
+        "dE_barrier_Ha": 0.000826875737068633,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.826875737068633,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.356910775806824
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2587769807930.5674,
+        "log10_k_MQE": 12.412925641551604,
+        "half_life_s": 3.8643313517893513e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "atp_hydrolysis_proxy": {
+      "mechanism": "atp_hydrolysis_proxy",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k14_atp_hydrolysis_proxy",
+      "tower_k": 14,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 48,
+        "ncas": 48
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 8.13275125248304,
+        "dF_used_Ha_per_bohr": 8.13275125248304,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 10.55,
+        "v_nuc_bohr_per_au": 0.00022157576450260234,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.2826655364381878,
+        "dE_barrier_kcal_per_mol": 0.8048846811710054,
+        "dE_barrier_Ha": 0.0012826655364381878,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.2826655364381878,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.742224535608202
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1596897263956.9045,
+        "log10_k_MQE": 12.20327697679483,
+        "half_life_s": 6.262143611681878e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "codh_acs": {
+      "mechanism": "codh_acs",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_codh_acs",
+      "tower_k": 15,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 37,
+        "ncas": 37
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 263.61721631603245,
+        "dF_used_Ha_per_bohr": 263.61721631603245,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8552077220791432,
+        "dE_barrier_kcal_per_mol": 0.53665088455725,
+        "dE_barrier_Ha": 0.0008552077220791432,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8552077220791432,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.74265199342256
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2511272487143.303,
+        "log10_k_MQE": 12.399893838655668,
+        "half_life_s": 3.982044979665068e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "complex_i": {
+      "mechanism": "complex_i",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_complex_i",
+      "tower_k": 15,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 46,
+        "ncas": 46
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 81.32751252483035,
+        "dF_used_Ha_per_bohr": 81.32751252483035,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8698342262025704,
+        "dE_barrier_kcal_per_mol": 0.5458291533838393,
+        "dE_barrier_Ha": 0.0008698342262025704,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8698342262025704,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.742637366918437
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2472669754751.7217,
+        "log10_k_MQE": 12.39316611665799,
+        "half_life_s": 4.044211719249217e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "cu_co2rr": {
+      "mechanism": "cu_co2rr",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k10_cu_co2rr",
+      "tower_k": 10,
+      "janus_step": 5,
+      "all_janus_steps": [
+        5
+      ],
+      "cas": {
+        "nelec_active": 36,
+        "ncas": 36
+      },
+      "spectral_class": "Group D",
+      "m_modulus": 12,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 39.26141751766904,
+        "dF_used_Ha_per_bohr": 39.26141751766904,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 6.857,
+        "v_nuc_bohr_per_au": 0.00027484093131788787,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=12)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 5,
+        "delta_t_m": 0.011547005383792516,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8118450722207626,
+        "dE_barrier_kcal_per_mol": 0.5094404141622074,
+        "dE_barrier_Ha": 0.0008118450722207626,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8118450722207626,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -6.715706551967375
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2629294690975.7793,
+        "log10_k_MQE": 12.419839264498238,
+        "half_life_s": 3.8033013318445555e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "cu_co2rr_m4": {
+      "mechanism": "cu_co2rr_m4",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_cu_co2rr_m4",
+      "tower_k": 18,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 62,
+        "ncas": 62
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 2829.848887021951,
+        "dF_used_Ha_per_bohr": 2829.848887021951,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8541111120408118,
+        "dE_barrier_kcal_per_mol": 0.5359627514500627,
+        "dE_barrier_Ha": 0.0008541111120408118,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8541111120408118,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35688354043185
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2514190864660.392,
+        "log10_k_MQE": 12.400398244043005,
+        "half_life_s": 3.977422772694214e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "cyp450_metabolism": {
+      "mechanism": "cyp450_metabolism",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_cyp450_metabolism",
+      "tower_k": 18,
+      "janus_step": 3,
+      "all_janus_steps": [
+        3
+      ],
+      "cas": {
+        "nelec_active": 65,
+        "ncas": 65
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 11.52,
+        "v_nuc_bohr_per_au": 0.00021204217323810606,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 3,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8197258648721117,
+        "dE_barrier_kcal_per_mol": 0.5143856856303799,
+        "dE_barrier_Ha": 0.0008197258648721117,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8197258648721117,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35691792567902
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2607440176699.7915,
+        "log10_k_MQE": 12.416214353061287,
+        "half_life_s": 3.8351790730849636e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "cyt_bd_oxidase": {
+      "mechanism": "cyt_bd_oxidase",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k14_cyt_bd_oxidase",
+      "tower_k": 14,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 52,
+        "ncas": 52
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 48.55373882079448,
+        "dF_used_Ha_per_bohr": 48.55373882079448,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.548463289477553,
+        "dE_barrier_kcal_per_mol": 0.9716752697020856,
+        "dE_barrier_Ha": 0.001548463289477553,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.548463289477553,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.741958737855162
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1205087410897.5115,
+        "log10_k_MQE": 12.0810185495612,
+        "half_life_s": 8.298153237326006e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "cyt_c_oxidase": {
+      "mechanism": "cyt_c_oxidase",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k14_cyt_c_oxidase",
+      "tower_k": 14,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 51,
+        "ncas": 51
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 48.55373882079416,
+        "dF_used_Ha_per_bohr": 48.55373882079416,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.5988139842608717,
+        "dE_barrier_kcal_per_mol": 1.003270803975149,
+        "dE_barrier_Ha": 0.0015988139842608717,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.5988139842608717,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.741908387160379
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1142506941955.7002,
+        "log10_k_MQE": 12.057858847554925,
+        "half_life_s": 8.752682047500191e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "ethylene_epoxidation": {
+      "mechanism": "ethylene_epoxidation",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k22_ethylene_epoxidation",
+      "tower_k": 22,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 72,
+        "ncas": 72
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 8,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 6.857,
+        "v_nuc_bohr_per_au": 0.00027484093131788787,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=8)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.014142135623730949,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.019755462152716,
+        "dE_barrier_kcal_per_mol": 0.6399061382021736,
+        "dE_barrier_Ha": 0.001019755462152716,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.019755462152716,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35671789608174
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2109634235141.4836,
+        "log10_k_MQE": 12.324207164572822,
+        "half_life_s": 4.74015819113276e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "femon2_trimer": {
+      "mechanism": "femon2_trimer",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_femon2_trimer",
+      "tower_k": 18,
+      "janus_step": 4,
+      "all_janus_steps": [
+        4
+      ],
+      "cas": {
+        "nelec_active": 56,
+        "ncas": 56
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 63.72226269841198,
+        "dF_used_Ha_per_bohr": 63.72226269841198,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 7.0,
+        "v_nuc_bohr_per_au": 0.00027201914187564315,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 4,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8409819179249212,
+        "dE_barrier_kcal_per_mol": 0.5277240587279165,
+        "dE_barrier_Ha": 0.0008409819179249212,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8409819179249212,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35689666962597
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2549395715145.997,
+        "log10_k_MQE": 12.40643725154062,
+        "half_life_s": 3.922498159304911e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "haber_bosch": {
+      "mechanism": "haber_bosch",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_haber_bosch",
+      "tower_k": 18,
+      "janus_step": 4,
+      "all_janus_steps": [
+        4
+      ],
+      "cas": {
+        "nelec_active": 68,
+        "ncas": 68
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 63.72226269841198,
+        "dF_used_Ha_per_bohr": 63.72226269841198,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 7.003,
+        "v_nuc_bohr_per_au": 0.00027196087078885033,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 4,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8328904530969794,
+        "dE_barrier_kcal_per_mol": 0.5226465884886137,
+        "dE_barrier_Ha": 0.0008328904530969794,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8328904530969794,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.356904761090796
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2571337392579.5356,
+        "log10_k_MQE": 12.410159065410634,
+        "half_life_s": 3.889026787716923e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "mo_nitrogenase": {
+      "mechanism": "mo_nitrogenase",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_mo_nitrogenase",
+      "tower_k": 15,
+      "janus_step": 3,
+      "all_janus_steps": [
+        3
+      ],
+      "cas": {
+        "nelec_active": 56,
+        "ncas": 56
+      },
+      "spectral_class": "Group A",
+      "m_modulus": 8,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 132.86275919433976,
+        "dF_used_Ha_per_bohr": 132.86275919433976,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 20.38,
+        "v_nuc_bohr_per_au": 0.00015942131840777094,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=8)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 3,
+        "delta_t_m": 0.014142135623730949,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.4177645327482225,
+        "dE_barrier_kcal_per_mol": 0.8896605712861174,
+        "dE_barrier_Ha": 0.0014177645327482225,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.4177645327482225,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -13.626041235929572
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1383999007752.3865,
+        "log10_k_MQE": 12.14113577875671,
+        "half_life_s": 7.22543870623144e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "mo_nitrogenase_m4": {
+      "mechanism": "mo_nitrogenase_m4",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_mo_nitrogenase_m4",
+      "tower_k": 18,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 66,
+        "ncas": 66
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 2405.371553968643,
+        "dF_used_Ha_per_bohr": 2405.371553968643,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8444966088063666,
+        "dE_barrier_kcal_per_mol": 0.5299295602941179,
+        "dE_barrier_Ha": 0.0008444966088063666,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8444966088063666,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.356893154935086
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2539923326631.2925,
+        "log10_k_MQE": 12.404820606650043,
+        "half_life_s": 3.937126721562508e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "nitrogenase_closed_loop": {
+      "mechanism": "nitrogenase_closed_loop",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_nitrogenase_closed_loop",
+      "tower_k": 18,
+      "janus_step": 4,
+      "all_janus_steps": [
+        4,
+        11
+      ],
+      "cas": {
+        "nelec_active": 68,
+        "ncas": 68
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 20.38,
+        "v_nuc_bohr_per_au": 0.00015942131840777094,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 4,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8409819179249212,
+        "dE_barrier_kcal_per_mol": 0.5277240587279165,
+        "dE_barrier_Ha": 0.0008409819179249212,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8409819179249212,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35689666962597
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2549395715145.997,
+        "log10_k_MQE": 12.40643725154062,
+        "half_life_s": 3.922498159304911e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "nitrogenase_fe4s4": {
+      "mechanism": "nitrogenase_fe4s4",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k17_nitrogenase_fe4s4",
+      "tower_k": 17,
+      "janus_step": 4,
+      "all_janus_steps": [
+        4
+      ],
+      "cas": {
+        "nelec_active": 43,
+        "ncas": 43
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 4,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.5911157831851597,
+        "dE_barrier_kcal_per_mol": 0.9984401104370497,
+        "dE_barrier_Ha": 0.0015911157831851597,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.5911157831851597,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35614653576071
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1151860200766.545,
+        "log10_k_MQE": 12.06139977273312,
+        "half_life_s": 8.681609099216343e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "nitrogenase_lt": {
+      "mechanism": "nitrogenase_lt",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_nitrogenase_lt",
+      "tower_k": 18,
+      "janus_step": 4,
+      "all_janus_steps": [
+        4
+      ],
+      "cas": {
+        "nelec_active": 68,
+        "ncas": 68
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 273.0954115646223,
+        "dF_used_Ha_per_bohr": 273.0954115646223,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 20.38,
+        "v_nuc_bohr_per_au": 0.00015942131840777094,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 4,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8217730271979917,
+        "dE_barrier_kcal_per_mol": 0.5156702992331955,
+        "dE_barrier_Ha": 0.0008217730271979917,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8217730271979917,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.356915878516695
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2601792899675.8916,
+        "log10_k_MQE": 12.415272724159642,
+        "half_life_s": 3.8435034553463926e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "nitrogenase_lt_m8": {
+      "mechanism": "nitrogenase_lt_m8",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k11_nitrogenase_lt_m8",
+      "tower_k": 11,
+      "janus_step": 3,
+      "all_janus_steps": [
+        3
+      ],
+      "cas": {
+        "nelec_active": 40,
+        "ncas": 40
+      },
+      "spectral_class": "Group F (m=8,fi=8)",
+      "m_modulus": 8,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 20.880794103255916,
+        "dF_used_Ha_per_bohr": 20.880794103255916,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 20.38,
+        "v_nuc_bohr_per_au": 0.00015942131840777094,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=8)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 3,
+        "delta_t_m": 0.014142135623730949,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.318474709332218,
+        "dE_barrier_kcal_per_mol": 0.8273552737682346,
+        "dE_barrier_Ha": 0.001318474709332218,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.318474709332218,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -2.997061463887285
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1537467370950.3965,
+        "log10_k_MQE": 12.186805907688717,
+        "half_life_s": 6.504203073798196e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "nitrogenase_lt_parallel": {
+      "mechanism": "nitrogenase_lt_parallel",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_nitrogenase_lt_parallel",
+      "tower_k": 18,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 68,
+        "ncas": 68
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 341.9685416402852,
+        "dF_used_Ha_per_bohr": 341.9685416402852,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 20.38,
+        "v_nuc_bohr_per_au": 0.00015942131840777094,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8369608189724431,
+        "dE_barrier_kcal_per_mol": 0.5252007813369064,
+        "dE_barrier_Ha": 0.0008369608189724431,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8369608189724431,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35690069072492
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2560276251803.2935,
+        "log10_k_MQE": 12.408286827874727,
+        "half_life_s": 3.9058285186829527e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "photocatalytic_n2": {
+      "mechanism": "photocatalytic_n2",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_photocatalytic_n2",
+      "tower_k": 15,
+      "janus_step": 3,
+      "all_janus_steps": [
+        3
+      ],
+      "cas": {
+        "nelec_active": 50,
+        "ncas": 50
+      },
+      "spectral_class": "Group A",
+      "m_modulus": 8,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 26.840961453402,
+        "dF_used_Ha_per_bohr": 26.840961453402,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 11.56,
+        "v_nuc_bohr_per_au": 0.00021167500036827874,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=8)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 3,
+        "delta_t_m": 0.014142135623730949,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.3803228153257407,
+        "dE_barrier_kcal_per_mol": 0.8661655416513664,
+        "dE_barrier_Ha": 0.0013803228153257407,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.3803228153257407,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -13.626078677646994
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1439984329326.1812,
+        "log10_k_MQE": 12.15835776589789,
+        "half_life_s": 6.944520017575017e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "photocatalytic_n2_m4": {
+      "mechanism": "photocatalytic_n2_m4",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_photocatalytic_n2_m4",
+      "tower_k": 18,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 57,
+        "ncas": 57
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 490.89215387115274,
+        "dF_used_Ha_per_bohr": 490.89215387115274,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.835617431079072,
+        "dE_barrier_kcal_per_mol": 0.5243577928059698,
+        "dE_barrier_Ha": 0.000835617431079072,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.835617431079072,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.356902034112814
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2563921611941.7285,
+        "log10_k_MQE": 12.408904743147263,
+        "half_life_s": 3.900275247661228e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "psii": {
+      "mechanism": "psii",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_psii",
+      "tower_k": 15,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 56,
+        "ncas": 56
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 13.11,
+        "v_nuc_bohr_per_au": 0.0001987683077986804,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8713848506776145,
+        "dE_barrier_kcal_per_mol": 0.5468021848177995,
+        "dE_barrier_Ha": 0.0008713848506776145,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8713848506776145,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.742635816293962
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2468612246895.5225,
+        "log10_k_MQE": 12.392452879215682,
+        "half_life_s": 4.0508589441601453e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "psii_photo": {
+      "mechanism": "psii_photo",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_psii_photo",
+      "tower_k": 15,
+      "janus_step": 2,
+      "all_janus_steps": [
+        2
+      ],
+      "cas": {
+        "nelec_active": 54,
+        "ncas": 54
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 13.11,
+        "v_nuc_bohr_per_au": 0.0001987683077986804,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 2,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8809447020912131,
+        "dE_barrier_kcal_per_mol": 0.5528010814424359,
+        "dE_barrier_Ha": 0.0008809447020912131,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8809447020912131,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.742626256442549
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2443743697554.296,
+        "log10_k_MQE": 12.38805565469046,
+        "half_life_s": 4.0920821647573033e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "reversible_quinone": {
+      "mechanism": "reversible_quinone",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_reversible_quinone",
+      "tower_k": 18,
+      "janus_step": 3,
+      "all_janus_steps": [
+        3
+      ],
+      "cas": {
+        "nelec_active": 36,
+        "ncas": 36
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": null,
+        "dF_used_Ha_per_bohr": null,
+        "dF_source": "unavailable",
+        "reduced_mass_amu": 6.857,
+        "v_nuc_bohr_per_au": 0.00027484093131788787,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 3,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8203450353647668,
+        "dE_barrier_kcal_per_mol": 0.5147742209347236,
+        "dE_barrier_Ha": 0.0008203450353647668,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8203450353647668,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35691730650853
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2605730848722.56,
+        "log10_k_MQE": 12.415929554526477,
+        "half_life_s": 3.8376949042539926e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "rnr_radical_proxy": {
+      "mechanism": "rnr_radical_proxy",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k15_rnr_radical_proxy",
+      "tower_k": 15,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 52,
+        "ncas": 52
+      },
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 4.952808306543592,
+        "dF_used_Ha_per_bohr": 4.952808306543592,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 6.857,
+        "v_nuc_bohr_per_au": 0.00027484093131788787,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.9593709375881332,
+        "dE_barrier_kcal_per_mol": 0.6020142814233669,
+        "dE_barrier_Ha": 0.0009593709375881332,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.9593709375881332,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -9.742547830207052
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2248961940785.2505,
+        "log10_k_MQE": 12.351982105926156,
+        "half_life_s": 4.446495878230997e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "thymine_dimer_proxy": {
+      "mechanism": "thymine_dimer_proxy",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_thymine_dimer_proxy",
+      "tower_k": 18,
+      "janus_step": 3,
+      "all_janus_steps": [
+        3
+      ],
+      "cas": {
+        "nelec_active": 42,
+        "ncas": 42
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 43.01669538782893,
+        "dF_used_Ha_per_bohr": 43.01669538782893,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 6.0,
+        "v_nuc_bohr_per_au": 0.00029381425391657704,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 3,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 1.4577195995855163,
+        "dE_barrier_kcal_per_mol": 0.9147327513041477,
+        "dE_barrier_Ha": 0.0014577195995855163,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 1.4577195995855163,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35627993194431
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 1326654185807.1128,
+        "log10_k_MQE": 12.122757731629957,
+        "half_life_s": 7.537759355062207e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "v_nitrogenase": {
+      "mechanism": "v_nitrogenase",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k10_v_nitrogenase",
+      "tower_k": 10,
+      "janus_step": 5,
+      "all_janus_steps": [
+        5
+      ],
+      "cas": {
+        "nelec_active": 36,
+        "ncas": 36
+      },
+      "spectral_class": "Group D",
+      "m_modulus": 12,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 39.261417517668015,
+        "dF_used_Ha_per_bohr": 39.261417517668015,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 20.38,
+        "v_nuc_bohr_per_au": 0.00015942131840777094,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=12)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 5,
+        "delta_t_m": 0.011547005383792516,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.5334513280930153,
+        "dE_barrier_kcal_per_mol": 0.3347457228208512,
+        "dE_barrier_Ha": 0.0005334513280930153,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.5334513280930153,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -6.715984945711503
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 3530948985215.353,
+        "log10_k_MQE": 12.547891442966803,
+        "half_life_s": 2.8320998241185575e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    },
+    "v_nitrogenase_m4": {
+      "mechanism": "v_nitrogenase_m4",
+      "temperature_K": 298.15,
+      "ok": true,
+      "error": null,
+      "tower_level": "k18_v_nitrogenase_m4",
+      "tower_k": 18,
+      "janus_step": 1,
+      "all_janus_steps": [
+        1
+      ],
+      "cas": {
+        "nelec_active": 65,
+        "ncas": 65
+      },
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "lz_diagnostics": {
+        "H_AB_Ha": 0.0,
+        "H12_1e_Ha": 0.0,
+        "H12_2e_Ha": 0.0,
+        "delta_CI_Ha": 0.0016,
+        "dF_1e_Ha_per_bohr": null,
+        "F_total_Ha_per_bohr": 2829.848887021951,
+        "dF_used_Ha_per_bohr": 2829.848887021951,
+        "dF_source": "fci-total",
+        "reduced_mass_amu": 15.0,
+        "v_nuc_bohr_per_au": 0.00018582445027988628,
+        "Gamma_classical": null,
+        "w_LZ_classical": null,
+        "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+      },
+      "topology": {
+        "winding_condition": "2|m (m=4)",
+        "w_LZ": 1.0,
+        "w_LZ_source": "thm:ujct (Berry phase, exact)",
+        "case": "III",
+        "note": null
+      },
+      "lindblad": {
+        "n_star": 1,
+        "delta_t_m": 0.02,
+        "p_k_star": 1.0,
+        "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+      },
+      "barrier": {
+        "dE_barrier_mHa": 0.8360015494659478,
+        "dE_barrier_kcal_per_mol": 0.5245988307044472,
+        "dE_barrier_Ha": 0.0008360015494659478,
+        "source": "qpe_residual",
+        "regime": "fast_enzymatic",
+        "residual_mHa": 0.8360015494659478,
+        "E_reactant_Ha": 0.0,
+        "E_janus_Ha": -57.35690164999443
+      },
+      "rate": {
+        "prefactor_kBT_h_per_s": 6212435831787.864,
+        "w_LZ": 1.0,
+        "p_k_star": 1.0,
+        "k_MQE_per_s": 2562878755112.51,
+        "log10_k_MQE": 12.408728061029697,
+        "half_life_s": 3.90186230232378e-13,
+        "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+        "regime": "fast_enzymatic"
+      }
+    }
+  },
+  "summary_table": [
+    {
+      "mechanism": "anammox_proxy",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8809907827647123,
+      "dE_barrier_kcal": 0.552829997498215,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2443624434188.145,
+      "log10_k_MQE": 12.388034459061064,
+      "half_life_s": 4.092281882638131e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "assimilatory_nr",
+      "spectral_class": "Group A",
+      "m_modulus": 8,
+      "case": "III",
+      "dE_barrier_mHa": 1.2758594019430802,
+      "dE_barrier_kcal": 0.8006137677976611,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1608450055408.35,
+      "log10_k_MQE": 12.206407580004969,
+      "half_life_s": 6.217165380034894e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "assimilatory_nr_m4",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.826875737068633,
+      "dE_barrier_kcal": 0.5188722976424957,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2587769807930.5674,
+      "log10_k_MQE": 12.412925641551604,
+      "half_life_s": 3.8643313517893513e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "atp_hydrolysis_proxy",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 1.2826655364381878,
+      "dE_barrier_kcal": 0.8048846811710054,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1596897263956.9045,
+      "log10_k_MQE": 12.20327697679483,
+      "half_life_s": 6.262143611681878e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "codh_acs",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8552077220791432,
+      "dE_barrier_kcal": 0.53665088455725,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2511272487143.303,
+      "log10_k_MQE": 12.399893838655668,
+      "half_life_s": 3.982044979665068e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "complex_i",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8698342262025704,
+      "dE_barrier_kcal": 0.5458291533838393,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2472669754751.7217,
+      "log10_k_MQE": 12.39316611665799,
+      "half_life_s": 4.044211719249217e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "cu_co2rr",
+      "spectral_class": "Group D",
+      "m_modulus": 12,
+      "case": "III",
+      "dE_barrier_mHa": 0.8118450722207626,
+      "dE_barrier_kcal": 0.5094404141622074,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2629294690975.7793,
+      "log10_k_MQE": 12.419839264498238,
+      "half_life_s": 3.8033013318445555e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "cu_co2rr_m4",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8541111120408118,
+      "dE_barrier_kcal": 0.5359627514500627,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2514190864660.392,
+      "log10_k_MQE": 12.400398244043005,
+      "half_life_s": 3.977422772694214e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "cyp450_metabolism",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8197258648721117,
+      "dE_barrier_kcal": 0.5143856856303799,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2607440176699.7915,
+      "log10_k_MQE": 12.416214353061287,
+      "half_life_s": 3.8351790730849636e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "cyt_bd_oxidase",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 1.548463289477553,
+      "dE_barrier_kcal": 0.9716752697020856,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1205087410897.5115,
+      "log10_k_MQE": 12.0810185495612,
+      "half_life_s": 8.298153237326006e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "cyt_c_oxidase",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 1.5988139842608717,
+      "dE_barrier_kcal": 1.003270803975149,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1142506941955.7002,
+      "log10_k_MQE": 12.057858847554925,
+      "half_life_s": 8.752682047500191e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "ethylene_epoxidation",
+      "spectral_class": "Group B",
+      "m_modulus": 8,
+      "case": "III",
+      "dE_barrier_mHa": 1.019755462152716,
+      "dE_barrier_kcal": 0.6399061382021736,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2109634235141.4836,
+      "log10_k_MQE": 12.324207164572822,
+      "half_life_s": 4.74015819113276e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "femon2_trimer",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8409819179249212,
+      "dE_barrier_kcal": 0.5277240587279165,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2549395715145.997,
+      "log10_k_MQE": 12.40643725154062,
+      "half_life_s": 3.922498159304911e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "haber_bosch",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8328904530969794,
+      "dE_barrier_kcal": 0.5226465884886137,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2571337392579.5356,
+      "log10_k_MQE": 12.410159065410634,
+      "half_life_s": 3.889026787716923e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "mo_nitrogenase",
+      "spectral_class": "Group A",
+      "m_modulus": 8,
+      "case": "III",
+      "dE_barrier_mHa": 1.4177645327482225,
+      "dE_barrier_kcal": 0.8896605712861174,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1383999007752.3865,
+      "log10_k_MQE": 12.14113577875671,
+      "half_life_s": 7.22543870623144e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "mo_nitrogenase_m4",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8444966088063666,
+      "dE_barrier_kcal": 0.5299295602941179,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2539923326631.2925,
+      "log10_k_MQE": 12.404820606650043,
+      "half_life_s": 3.937126721562508e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "nitrogenase_closed_loop",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8409819179249212,
+      "dE_barrier_kcal": 0.5277240587279165,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2549395715145.997,
+      "log10_k_MQE": 12.40643725154062,
+      "half_life_s": 3.922498159304911e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "nitrogenase_fe4s4",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 1.5911157831851597,
+      "dE_barrier_kcal": 0.9984401104370497,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1151860200766.545,
+      "log10_k_MQE": 12.06139977273312,
+      "half_life_s": 8.681609099216343e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "nitrogenase_lt",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8217730271979917,
+      "dE_barrier_kcal": 0.5156702992331955,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2601792899675.8916,
+      "log10_k_MQE": 12.415272724159642,
+      "half_life_s": 3.8435034553463926e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "nitrogenase_lt_m8",
+      "spectral_class": "Group F (m=8,fi=8)",
+      "m_modulus": 8,
+      "case": "III",
+      "dE_barrier_mHa": 1.318474709332218,
+      "dE_barrier_kcal": 0.8273552737682346,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1537467370950.3965,
+      "log10_k_MQE": 12.186805907688717,
+      "half_life_s": 6.504203073798196e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "nitrogenase_lt_parallel",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8369608189724431,
+      "dE_barrier_kcal": 0.5252007813369064,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2560276251803.2935,
+      "log10_k_MQE": 12.408286827874727,
+      "half_life_s": 3.9058285186829527e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "photocatalytic_n2",
+      "spectral_class": "Group A",
+      "m_modulus": 8,
+      "case": "III",
+      "dE_barrier_mHa": 1.3803228153257407,
+      "dE_barrier_kcal": 0.8661655416513664,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1439984329326.1812,
+      "log10_k_MQE": 12.15835776589789,
+      "half_life_s": 6.944520017575017e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "photocatalytic_n2_m4",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.835617431079072,
+      "dE_barrier_kcal": 0.5243577928059698,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2563921611941.7285,
+      "log10_k_MQE": 12.408904743147263,
+      "half_life_s": 3.900275247661228e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "psii",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8713848506776145,
+      "dE_barrier_kcal": 0.5468021848177995,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2468612246895.5225,
+      "log10_k_MQE": 12.392452879215682,
+      "half_life_s": 4.0508589441601453e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "psii_photo",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8809447020912131,
+      "dE_barrier_kcal": 0.5528010814424359,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2443743697554.296,
+      "log10_k_MQE": 12.38805565469046,
+      "half_life_s": 4.0920821647573033e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "reversible_quinone",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8203450353647668,
+      "dE_barrier_kcal": 0.5147742209347236,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2605730848722.56,
+      "log10_k_MQE": 12.415929554526477,
+      "half_life_s": 3.8376949042539926e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "rnr_radical_proxy",
+      "spectral_class": "Group C",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.9593709375881332,
+      "dE_barrier_kcal": 0.6020142814233669,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2248961940785.2505,
+      "log10_k_MQE": 12.351982105926156,
+      "half_life_s": 4.446495878230997e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "thymine_dimer_proxy",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 1.4577195995855163,
+      "dE_barrier_kcal": 0.9147327513041477,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 1326654185807.1128,
+      "log10_k_MQE": 12.122757731629957,
+      "half_life_s": 7.537759355062207e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "v_nitrogenase",
+      "spectral_class": "Group D",
+      "m_modulus": 12,
+      "case": "III",
+      "dE_barrier_mHa": 0.5334513280930153,
+      "dE_barrier_kcal": 0.3347457228208512,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 3530948985215.353,
+      "log10_k_MQE": 12.547891442966803,
+      "half_life_s": 2.8320998241185575e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    },
+    {
+      "mechanism": "v_nitrogenase_m4",
+      "spectral_class": "Group B",
+      "m_modulus": 4,
+      "case": "III",
+      "dE_barrier_mHa": 0.8360015494659478,
+      "dE_barrier_kcal": 0.5245988307044472,
+      "w_LZ": 1.0,
+      "k_MQE_per_s": 2562878755112.51,
+      "log10_k_MQE": 12.408728061029697,
+      "half_life_s": 3.90186230232378e-13,
+      "regime": "fast_enzymatic",
+      "ok": true
+    }
+  ]
+}

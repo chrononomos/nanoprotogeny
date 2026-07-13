@@ -1,0 +1,1 @@
+{"rule":"AGREEMENT_SENT_START","sentence":"^\\QCompare to the hybrid where the outputs includes \"datasets/hybrids/femon2_trimer/eri_packed_step04.npy, datasets/hybrids/femon2_trimer/eri_packed.npy, and datasets/hybrids/femon2_trimer/h1_full.npy\" (as well as the specific Janus datasets/hybrids/femon2_trimer/h1_full_step04.npy).\\E$"}

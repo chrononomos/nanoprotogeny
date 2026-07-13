@@ -1,0 +1,213 @@
+{
+  "generated_at": "2026-06-17T07:51:36.046642+00:00",
+  "mqe_article_reference": "nanoprotogeny.theory.mqe v2026.05",
+  "thm_reference": "thm:hamiltonian_from_zeros (sec:hamiltonian_from_zeros)",
+  "results": {
+    "mechanism": "cu_co2rr",
+    "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/cu_co2rr/k10_cu_co2rr",
+    "ok": true,
+    "error": null,
+    "janus_step": 5,
+    "n_orb": 4,
+    "n_e": 4,
+    "step_file": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/cu_co2rr/step_05.json",
+    "paths": {
+      "wigner_dyson_level_spacing": {
+        "dim": 70,
+        "n_ratios": 34,
+        "r_mean": 0.3740360336155469,
+        "r_GUE_ref": 0.5996,
+        "r_Poisson_ref": 0.3863,
+        "verdict": "Poisson",
+        "E_gs_Ha": -1.3900028781999583,
+        "E_gs_error_mHa": 3.530509218307998e-11,
+        "interpretation": "r=0.374: Poisson (1e-dominated, expected at CAS(4,4) scale). GUE emerges at full CAS or via QPE eigenphase measurement (rem:montgomery_qc).",
+        "ok": true
+      },
+      "kummer_log_prime_scaling": {
+        "n_orbitals": 4,
+        "primes": [
+          2,
+          3,
+          5,
+          7
+        ],
+        "orbital_order_by_abs_h": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "abs_h_diag_sorted_Ha": [
+          0.4185368733115218,
+          0.4776937389936124,
+          0.5152661088567475,
+          0.7248235906916227
+        ],
+        "h_diag_raw_Ha": [
+          -0.7248235906916227,
+          -0.5152661088567475,
+          -0.4776937389936124,
+          -0.4185368733115218
+        ],
+        "log_p": [
+          0.6931471805599453,
+          1.0986122886681098,
+          1.6094379124341003,
+          1.9459101490553132
+        ],
+        "fit_A_Ha_per_log_unit": 0.21700282698214848,
+        "fit_A_mHa_per_log_unit": 217.0028269821485,
+        "fit_B_Ha": 0.2439957153775696,
+        "R2": 0.8101124671646085,
+        "residuals_Ha": [
+          0.02412626023773834,
+          -0.004703948782265155,
+          -0.07798218337126939,
+          0.05855987191579626
+        ],
+        "residuals_mHa": [
+          24.12626023773834,
+          -4.7039487822651544,
+          -77.98218337126939,
+          58.55987191579626
+        ],
+        "epsilon_p_manifest": [
+          0.06549480485228643,
+          0.01593902400095315,
+          0.008688878638744124,
+          0.09433128599121732
+        ],
+        "verdict": "pass",
+        "ok": true
+      },
+      "landau_zener_crossing_criterion": {
+        "dominant_coupling_pair": [
+          0,
+          3
+        ],
+        "stoichiometric_crossing_pair": [
+          0,
+          1
+        ],
+        "h_diag_a_Ha": -0.7248235906916227,
+        "h_diag_b_Ha": -0.4185368733115218,
+        "gap_Ha": 0.30628671738010094,
+        "gap_mHa": 306.2867173801009,
+        "h_coupling_Ha": -0.09757961414920592,
+        "h_coupling_mHa": -97.57961414920592,
+        "ratio_abs_h_over_gap": 0.31858911474802837,
+        "all_hops_Ha": {
+          "h[0,1]": 1.0236189380711039e-07,
+          "h[0,2]": 0.011362642107903054,
+          "h[0,3]": -0.09757961414920592,
+          "h[1,2]": -3.055001744200342e-08,
+          "h[1,3]": 1.2786464644032325e-08,
+          "h[2,3]": -0.011923067086864005
+        },
+        "is_crossing_topological": true,
+        "verdict": "Janus intermediate confirmed (topological)",
+        "ok": true
+      },
+      "gue_sinc2_two_electron_constraint": {
+        "pairs": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "J_pq_Ha": [
+          0.19040550990266925,
+          0.17651722866738587,
+          0.18356914085231227,
+          0.14976631533506424,
+          0.1589938855290629,
+          0.15566018368396634
+        ],
+        "J_pq_mHa": [
+          190.40550990266925,
+          176.51722866738587,
+          183.56914085231227,
+          149.76631533506423,
+          158.9938855290629,
+          155.66018368396632
+        ],
+        "K_pq_Ha": [
+          0.03413442730442602,
+          0.026683880496720144,
+          0.027354805863524692,
+          0.012459919304090631,
+          0.020580361870438203,
+          0.02766929829418971
+        ],
+        "K_pq_mHa": [
+          34.13442730442602,
+          26.683880496720143,
+          27.354805863524692,
+          12.459919304090631,
+          20.580361870438203,
+          27.66929829418971
+        ],
+        "J_mean_Ha": 0.1691520439950768,
+        "J_mean_mHa": 169.1520439950768,
+        "J_std_Ha": 0.015137334606242713,
+        "J_rms_Ha": 0.16982800972364293,
+        "J_rms_mHa": 169.82800972364294,
+        "K_mean_abs_Ha": 0.024813782188898233,
+        "K_mean_abs_mHa": 24.813782188898234,
+        "K_std_Ha": 0.006776457313898103,
+        "GUE_RMS_Ha": 0.16982800972364293,
+        "GUE_RMS_mHa": 169.82800972364294,
+        "K_suppressed": false,
+        "K_over_J_ratio": 0.1466951365342085,
+        "order_consistent": false,
+        "verdict": "fail",
+        "ok": false
+      },
+      "padic_remainder_exactness": {
+        "E_inf_Ha": -6.716518397039596,
+        "E_init_Ha": -1.3900028781999936,
+        "delta_0_Ha": 5.326515518839602,
+        "tower_p": 3,
+        "tower_k_conv": 10,
+        "exponent": -8,
+        "kummer_correction_Ha": 0.0008118450722206374,
+        "E_kummer_Ha": -6.715706551967375,
+        "E_janus_manifest_Ha": -6.715706551967375,
+        "delta_Ha": 0.0,
+        "delta_mHa": 0.0,
+        "exact": true,
+        "verdict": "EXACT",
+        "ok": true
+      }
+    },
+    "summary": {
+      "wigner_dyson_verdict": "Poisson",
+      "kummer_log_prime_R2": 0.8101124671646085,
+      "landau_zener_ratio": 0.31858911474802837,
+      "gue_sinc2_ok": false,
+      "padic_remainder_delta_mHa": 0.0,
+      "all_pass": false
+    }
+  }
+}

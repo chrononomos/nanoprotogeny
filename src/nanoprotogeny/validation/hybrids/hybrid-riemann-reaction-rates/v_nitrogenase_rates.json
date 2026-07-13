@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-17T11:29:08.194126+00:00",
+  "mqe_article_reference": "nanoprotogeny.theory.mqe v2026.05",
+  "results": {
+    "mechanism": "v_nitrogenase",
+    "temperature_K": 298.15,
+    "ok": true,
+    "error": null,
+    "tower_level": "k10_v_nitrogenase",
+    "tower_k": 10,
+    "janus_step": 5,
+    "all_janus_steps": [
+      5
+    ],
+    "cas": {
+      "nelec_active": 36,
+      "ncas": 36
+    },
+    "spectral_class": "Group D",
+    "m_modulus": 12,
+    "case": "III",
+    "lz_diagnostics": {
+      "H_AB_Ha": 0.0,
+      "H12_1e_Ha": 0.0,
+      "H12_2e_Ha": 0.0,
+      "delta_CI_Ha": 0.0016,
+      "dF_1e_Ha_per_bohr": null,
+      "F_total_Ha_per_bohr": 39.261417517668015,
+      "dF_used_Ha_per_bohr": 39.261417517668015,
+      "dF_source": "fci-total",
+      "reduced_mass_amu": 20.38,
+      "v_nuc_bohr_per_au": 0.00015942131840777094,
+      "Gamma_classical": null,
+      "w_LZ_classical": null,
+      "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+    },
+    "topology": {
+      "winding_condition": "2|m (m=12)",
+      "w_LZ": 1.0,
+      "w_LZ_source": "thm:ujct (Berry phase, exact)",
+      "case": "III",
+      "note": null
+    },
+    "lindblad": {
+      "n_star": 5,
+      "delta_t_m": 0.011547005383792516,
+      "p_k_star": 1.0,
+      "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+    },
+    "barrier": {
+      "dE_barrier_mHa": 0.5334513280930153,
+      "dE_barrier_kcal_per_mol": 0.3347457228208512,
+      "dE_barrier_Ha": 0.0005334513280930153,
+      "source": "qpe_residual",
+      "regime": "fast_enzymatic",
+      "residual_mHa": 0.5334513280930153,
+      "E_reactant_Ha": 0.0,
+      "E_janus_Ha": -6.715984945711503
+    },
+    "rate": {
+      "prefactor_kBT_h_per_s": 6212435831787.864,
+      "w_LZ": 1.0,
+      "p_k_star": 1.0,
+      "k_MQE_per_s": 3530948985215.353,
+      "log10_k_MQE": 12.547891442966803,
+      "half_life_s": 2.8320998241185575e-13,
+      "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+      "regime": "fast_enzymatic"
+    }
+  }
+}

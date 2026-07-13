@@ -1,0 +1,62 @@
+{
+  "mqe_riemann_validation": {
+    "v_nitrogenase": {
+      "mechanism_name": "v_nitrogenase",
+      "N_orbitals": 36,
+      "M_steps": 12,
+      "m": 12,
+      "scaffold_class": "Group D",
+      "s_value": 0.0274344471906157,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "5": {
+          "step_label": "Janus (exact) E_5",
+          "geometry": "step_05",
+          "E_tower": -6.715984945711503,
+          "E_ref_total": -6.715984945711503,
+          "E_riemann": -6.716518397039596,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group D",
+          "s_value": 0.0274344471906157,
+          "residual_mHa": 0.5334513280930153,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "11": {
+          "step_label": "E_11 (tower)",
+          "geometry": "BL=2.258 \u00c5",
+          "E_tower": -9.314822393776806,
+          "n_orbs": 36,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -2.598303996737211,
+        -4.118214400302385,
+        -5.196607993474422,
+        -6.033075049082251,
+        -6.715984945711503,
+        -7.294361514242153,
+        -7.794911990211633,
+        -8.23642880060477,
+        -8.631379045819463,
+        -8.988655001144368,
+        -9.314822393776806
+      ],
+      "E_ref_final": -9.314822393776806,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/v_nitrogenase/k10_v_nitrogenase",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 36,
+  "timestamp": "2026-06-17T11:19:57Z"
+}

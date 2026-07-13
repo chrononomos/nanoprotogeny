@@ -1,0 +1,54 @@
+{
+  "mqe_riemann_validation": {
+    "complex_i": {
+      "mechanism_name": "complex_i",
+      "N_orbitals": 46,
+      "M_steps": 4,
+      "m": 4,
+      "scaffold_class": "Group C",
+      "s_value": 0.041359872668661715,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "2": {
+          "step_label": "Janus (exact) E_2",
+          "geometry": "step_02",
+          "E_tower": -9.742637366918437,
+          "E_ref_total": -9.742637366918437,
+          "E_riemann": -9.74350720114464,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group C",
+          "s_value": 0.041359872668661715,
+          "residual_mHa": 0.8698342262025704,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "3": {
+          "step_label": "E_3 (tower)",
+          "geometry": "BL=2.2 \u00c5",
+          "E_tower": -12.294937194679816,
+          "n_orbs": 46,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -6.147468597339908,
+        -9.742637366918437,
+        -12.294937194679816
+      ],
+      "E_ref_final": -12.294937194679816,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/complex_i/k15_complex_i",
+      "elapsed_s": 0.02
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 46,
+  "timestamp": "2026-06-18T09:53:32Z"
+}

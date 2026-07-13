@@ -1,0 +1,58 @@
+{
+  "mqe_riemann_validation": {
+    "femon2_trimer": {
+      "mechanism_name": "femon2_trimer",
+      "N_orbitals": 56,
+      "M_steps": 8,
+      "m": 4,
+      "scaffold_class": "Group B",
+      "s_value": 0.08115861762629879,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "4": {
+          "step_label": "Janus (exact) E_4",
+          "geometry": "step_04",
+          "E_tower": -57.35689666962597,
+          "E_ref_total": -57.35689666962597,
+          "E_riemann": -57.35773765154389,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group B",
+          "s_value": 0.08115861762629879,
+          "residual_mHa": 0.8409819179249212,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "7": {
+          "step_label": "E_7 (tower)",
+          "geometry": "BL=1.52 \u00c5",
+          "E_tower": -74.10789909193076,
+          "n_orbs": 56,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -24.70263303064359,
+        -39.1527470226459,
+        -49.40526606128718,
+        -57.35689666962597,
+        -63.85538005328948,
+        -69.34905842636003,
+        -74.10789909193076
+      ],
+      "E_ref_final": -74.10789909193076,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/femon2_trimer/k18_femon2_trimer",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 56,
+  "timestamp": "2026-06-14T12:08:33Z"
+}

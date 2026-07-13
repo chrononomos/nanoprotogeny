@@ -1,0 +1,56 @@
+{
+  "mqe_riemann_validation": {
+    "reversible_quinone": {
+      "mechanism_name": "reversible_quinone",
+      "N_orbitals": 36,
+      "M_steps": 6,
+      "m": 4,
+      "scaffold_class": "Group B",
+      "s_value": 0.08115861762629879,
+      "phase_closure_ok": false,
+      "qpe_results": {
+        "3": {
+          "step_label": "Janus (exact) E_3",
+          "geometry": "step_03",
+          "E_tower": -57.35691730650853,
+          "E_ref_total": -57.35691730650853,
+          "E_riemann": -57.35773765154389,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group B",
+          "s_value": 0.08115861762629879,
+          "residual_mHa": 0.8203450353647668,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "5": {
+          "step_label": "E_5 (tower)",
+          "geometry": "Q_cycle_step_5_(rev)",
+          "E_tower": -74.13380047772146,
+          "n_orbs": 36,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -28.67886882577195,
+        -45.45493165194952,
+        -57.35691730650853,
+        -66.59027125614922,
+        -74.13380047772146
+      ],
+      "E_ref_final": -74.13380047772146,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/reversible_quinone/k18_reversible_quinone",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 36,
+  "timestamp": "2026-06-17T02:22:55Z"
+}

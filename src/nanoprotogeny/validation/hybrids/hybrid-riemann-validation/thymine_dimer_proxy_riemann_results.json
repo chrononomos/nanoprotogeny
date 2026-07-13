@@ -1,0 +1,56 @@
+{
+  "mqe_riemann_validation": {
+    "thymine_dimer_proxy": {
+      "mechanism_name": "thymine_dimer_proxy",
+      "N_orbitals": 42,
+      "M_steps": 6,
+      "m": 4,
+      "scaffold_class": "Group B",
+      "s_value": 0.08115861762629879,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "3": {
+          "step_label": "Janus (exact) E_3",
+          "geometry": "ThymineDimer_Stacked_d=2.02A",
+          "E_tower": -57.35627993194431,
+          "E_ref_total": -57.35627993194431,
+          "E_riemann": -57.35773765154389,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group B",
+          "s_value": 0.08115861762629879,
+          "residual_mHa": 1.4577195995855163,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "5": {
+          "step_label": "E_5 (tower)",
+          "geometry": "ThymineDimer_Stacked_d=1.50A",
+          "E_tower": -148.26760095544293,
+          "n_orbs": 42,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -57.3577376515439,
+        -90.90986330389904,
+        -57.35627993194431,
+        -133.18054251229844,
+        -148.26760095544293
+      ],
+      "E_ref_final": -148.26760095544293,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/thymine_dimer_proxy/k18_thymine_dimer_proxy",
+      "elapsed_s": 0.02
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 42,
+  "timestamp": "2026-06-17T01:51:09Z"
+}

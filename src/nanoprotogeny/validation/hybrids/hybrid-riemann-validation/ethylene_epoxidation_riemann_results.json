@@ -1,0 +1,54 @@
+{
+  "mqe_riemann_validation": {
+    "ethylene_epoxidation": {
+      "mechanism_name": "ethylene_epoxidation",
+      "N_orbitals": 72,
+      "M_steps": 4,
+      "m": 8,
+      "scaffold_class": "Group B",
+      "s_value": 0.08115861762629879,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "1": {
+          "step_label": "Janus (exact) E_1",
+          "geometry": "Epoxidation_Ag3Cl_step_1_d=2.8A",
+          "E_tower": -57.35671789608174,
+          "E_ref_total": -57.35671789608174,
+          "E_riemann": -57.35773765154389,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group B",
+          "s_value": 0.08115861762629879,
+          "residual_mHa": 1.019755462152716,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "3": {
+          "step_label": "E_3 (tower)",
+          "geometry": "Epoxidation_Ag3Cl_step_3_d=2.0A",
+          "E_tower": -72.37740656380979,
+          "n_orbs": 72,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -57.35671789608174,
+        -57.35773765154389,
+        -72.37740656380979
+      ],
+      "E_ref_final": -72.37740656380979,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/ethylene_epoxidation/k22_ethylene_epoxidation",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 72,
+  "timestamp": "2026-06-17T02:13:09Z"
+}

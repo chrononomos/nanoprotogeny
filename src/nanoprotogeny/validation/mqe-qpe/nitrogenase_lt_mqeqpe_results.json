@@ -1,0 +1,139 @@
+{
+  "mqe_validation": {
+    "nitrogenase_lt": {
+      "mechanism_name": "nitrogenase_lt",
+      "N_orbitals": 4,
+      "M_steps": 8,
+      "m": 4,
+      "n_crossings": 1,
+      "is_reversible_cycle": false,
+      "total_electrons": 8,
+      "total_cofactor_shift": 16,
+      "total_electrons_ejected": 0,
+      "net_electrons": 8,
+      "net_cofactor_shift": 16,
+      "total_photons_absorbed": 0,
+      "total_photons_emitted": 0,
+      "net_photons": 0,
+      "phase_closure_ok": true,
+      "electron_count_ok": true,
+      "stoichiometric_ok": true,
+      "qpe_results": {
+        "4": {
+          "step_label": "Janus E_4\u2192E_5",
+          "geometry": "Fe2S2 E4: Fe-S=2.316 Ang",
+          "E_exact_diag": -2.752079543267427,
+          "E_ref_fci": -3319.673636369509,
+          "E_ref_used": -2.7520795432674277,
+          "E_map": {
+            "1": -2.607941053180701,
+            "2": -2.4998786853234254,
+            "3": -2.4185017563779914
+          },
+          "E_zne_rich": -2.7426888599498183,
+          "E_zne_exp": -2.751439652823743,
+          "E_zne_best": -2.751439652823743,
+          "zne_method": "exp",
+          "residual_mHa": 0.6398904436846209,
+          "chem_ok": true,
+          "eta_v": 0.9952113821607437,
+          "tau_seq_used": [
+            0.02,
+            0.04,
+            0.08,
+            0.16
+          ],
+          "tau_seq_source": "adaptive",
+          "integral_source": "dataset"
+        },
+        "7": {
+          "step_label": "E_7\u2192E_8",
+          "geometry": "Fe2S2 E7: Fe-S=2.358 Ang",
+          "E_exact_diag": -2.7433861456551987,
+          "E_ref_fci": -3319.6684385539365,
+          "E_ref_used": -2.743386145655222,
+          "E_map": {
+            "1": -2.59901151344934,
+            "2": -2.490737063599164,
+            "3": -2.40920005461371
+          },
+          "E_zne_rich": -2.734023404164238,
+          "E_zne_exp": -2.7427910883470368,
+          "E_zne_best": -2.7427910883470368,
+          "zne_method": "exp",
+          "residual_mHa": 0.5950573081854316,
+          "chem_ok": true,
+          "eta_v": 0.9952113821607437,
+          "tau_seq_used": [
+            0.02,
+            0.04,
+            0.08,
+            0.16
+          ],
+          "tau_seq_source": "cached",
+          "integral_source": "dataset"
+        }
+      },
+      "step_reference_energies": [
+        -3319.6799636886967,
+        -3319.6784525943326,
+        -3319.6768929288514,
+        -3319.6752868357753,
+        -3319.673636369509,
+        -3319.6719435516793,
+        -3319.6702103269995,
+        -3319.6684385539365
+      ],
+      "E_ref_final": -3319.6684385539365,
+      "E_zne_final": -2.7427910883470368,
+      "residual_mHa_final": 0.5950573081854316,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "virtual_ancilla",
+      "integral_source": "dataset",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/baseline",
+      "elapsed_s": 299.14,
+      "stoich_checks": [
+        {
+          "condition": "(i) Net electron flux conservation",
+          "passed": true,
+          "expected": 8,
+          "actual": 8,
+          "injected": 8,
+          "ejected": 0,
+          "detail": "<N_e>_net = 8 (injected 8 \u2212 ejected 0) , expected 8"
+        },
+        {
+          "condition": "(ii) Net-flux phase closure",
+          "passed": true,
+          "k_total": 16,
+          "k_mod_m": 0,
+          "m": 4,
+          "detail": "\u03a3(\u03bd\u2212\u03bd\u2020)=16 mod 4 = 0 (expected 0)"
+        },
+        {
+          "condition": "(iii) Trace preservation",
+          "passed": true,
+          "trace": 1.0,
+          "detail": "Tr(\u03c1_final) = 1.00000000 (expected 1.0)"
+        },
+        {
+          "condition": "(iv) Spin-parity holding",
+          "passed": true,
+          "warrants": [
+            0.8999999863791257,
+            0.8999999863791277,
+            0.8999999863780781,
+            0.8999999863780781
+          ],
+          "min_warrant": 0.8999999863780781,
+          "eta": 0.9,
+          "detail": "min \u03c9 = 0.9000 vs \u03b7=0.9 [AntiTh+SynTh (high-spin)]"
+        }
+      ]
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 MQE-QPE",
+  "n_orbitals": 4,
+  "timestamp": "2026-06-20T06:09:57Z",
+  "reference": "arXiv:nanoprotogeny.theory.mqe"
+}

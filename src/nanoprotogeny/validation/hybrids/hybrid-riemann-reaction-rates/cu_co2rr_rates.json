@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-17T08:00:54.754266+00:00",
+  "mqe_article_reference": "nanoprotogeny.theory.mqe v2026.05",
+  "results": {
+    "mechanism": "cu_co2rr",
+    "temperature_K": 298.15,
+    "ok": true,
+    "error": null,
+    "tower_level": "k10_cu_co2rr",
+    "tower_k": 10,
+    "janus_step": 5,
+    "all_janus_steps": [
+      5
+    ],
+    "cas": {
+      "nelec_active": 36,
+      "ncas": 36
+    },
+    "spectral_class": "Group D",
+    "m_modulus": 12,
+    "case": "III",
+    "lz_diagnostics": {
+      "H_AB_Ha": 0.0,
+      "H12_1e_Ha": 0.0,
+      "H12_2e_Ha": 0.0,
+      "delta_CI_Ha": 0.0016,
+      "dF_1e_Ha_per_bohr": null,
+      "F_total_Ha_per_bohr": 39.26141751766904,
+      "dF_used_Ha_per_bohr": 39.26141751766904,
+      "dF_source": "fci-total",
+      "reduced_mass_amu": 6.857,
+      "v_nuc_bohr_per_au": 0.00027484093131788787,
+      "Gamma_classical": null,
+      "w_LZ_classical": null,
+      "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+    },
+    "topology": {
+      "winding_condition": "2|m (m=12)",
+      "w_LZ": 1.0,
+      "w_LZ_source": "thm:ujct (Berry phase, exact)",
+      "case": "III",
+      "note": null
+    },
+    "lindblad": {
+      "n_star": 5,
+      "delta_t_m": 0.011547005383792516,
+      "p_k_star": 1.0,
+      "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+    },
+    "barrier": {
+      "dE_barrier_mHa": 1390.0028781999936,
+      "dE_barrier_kcal_per_mol": 872.2398720975511,
+      "dE_barrier_Ha": 1.3900028781999936,
+      "source": "manifest_relative_energies",
+      "regime": "pathological_scaffold",
+      "residual_mHa": null,
+      "E_reactant_Ha": 6.715706551967375,
+      "E_janus_Ha": 5.325703673767381
+    },
+    "rate": {
+      "prefactor_kBT_h_per_s": 6212435831787.864,
+      "w_LZ": 1.0,
+      "p_k_star": 1.0,
+      "k_MQE_per_s": 0.0,
+      "log10_k_MQE": null,
+      "half_life_s": null,
+      "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+      "regime": "pathological_scaffold"
+    }
+  }
+}

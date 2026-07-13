@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-17T07:49:47.092566+00:00",
+  "mqe_article_reference": "nanoprotogeny.theory.mqe v2026.05",
+  "results": {
+    "mechanism": "cyp450_metabolism",
+    "temperature_K": 298.15,
+    "ok": true,
+    "error": null,
+    "tower_level": "k18_cyp450_metabolism",
+    "tower_k": 18,
+    "janus_step": 3,
+    "all_janus_steps": [
+      3
+    ],
+    "cas": {
+      "nelec_active": 65,
+      "ncas": 65
+    },
+    "spectral_class": "Group B",
+    "m_modulus": 4,
+    "case": "III",
+    "lz_diagnostics": {
+      "H_AB_Ha": 0.0,
+      "H12_1e_Ha": 0.0,
+      "H12_2e_Ha": 0.0,
+      "delta_CI_Ha": 0.0016,
+      "dF_1e_Ha_per_bohr": null,
+      "F_total_Ha_per_bohr": null,
+      "dF_used_Ha_per_bohr": null,
+      "dF_source": "unavailable",
+      "reduced_mass_amu": 11.52,
+      "v_nuc_bohr_per_au": 0.00021204217323810606,
+      "Gamma_classical": null,
+      "w_LZ_classical": null,
+      "note": "\u0393_cl diagnostic only. For Case III (4|m), topology (thm:ujct) guarantees w_LZ=1 independently of \u0393_cl."
+    },
+    "topology": {
+      "winding_condition": "2|m (m=4)",
+      "w_LZ": 1.0,
+      "w_LZ_source": "thm:ujct (Berry phase, exact)",
+      "case": "III",
+      "note": null
+    },
+    "lindblad": {
+      "n_star": 3,
+      "delta_t_m": 0.02,
+      "p_k_star": 1.0,
+      "note": "\u0393_max\u207b\u00b9 >> n*\u00b7\u0394t_m \u2014 all mechanisms satisfied"
+    },
+    "barrier": {
+      "dE_barrier_mHa": 0.8197258648721117,
+      "dE_barrier_kcal_per_mol": 0.5143856856303799,
+      "dE_barrier_Ha": 0.0008197258648721117,
+      "source": "qpe_residual",
+      "regime": "fast_enzymatic",
+      "residual_mHa": 0.8197258648721117,
+      "E_reactant_Ha": 0.0,
+      "E_janus_Ha": -57.35691792567902
+    },
+    "rate": {
+      "prefactor_kBT_h_per_s": 6212435831787.864,
+      "w_LZ": 1.0,
+      "p_k_star": 1.0,
+      "k_MQE_per_s": 2607440176699.7915,
+      "log10_k_MQE": 12.416214353061287,
+      "half_life_s": 3.8351790730849636e-13,
+      "formula": "k_MQE = (k_BT/h) * w_LZ * p(k*) * exp(-\u0394E\u2021/RT)",
+      "regime": "fast_enzymatic"
+    }
+  }
+}

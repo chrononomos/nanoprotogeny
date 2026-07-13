@@ -1,0 +1,58 @@
+{
+  "mqe_riemann_validation": {
+    "nitrogenase_lt_m8": {
+      "mechanism_name": "nitrogenase_lt_m8",
+      "N_orbitals": 40,
+      "M_steps": 8,
+      "m": 8,
+      "scaffold_class": "Group F (m=8,fi=8)",
+      "s_value": 0.020999663398146844,
+      "phase_closure_ok": true,
+      "qpe_results": {
+        "3": {
+          "step_label": "Janus (exact) E_3",
+          "geometry": "step_03",
+          "E_tower": -2.997061463887285,
+          "E_ref_total": -2.997061463887285,
+          "E_riemann": -2.9983799385966172,
+          "gamma_k": 14.134725141734693,
+          "zero_index": 1,
+          "spectral_class": "Group F (m=8,fi=8)",
+          "s_value": 0.020999663398146844,
+          "residual_mHa": 1.318474709332218,
+          "chem_ok": true,
+          "method": "riemann_exact",
+          "simulated": false
+        },
+        "7": {
+          "step_label": "E_7 (tower)",
+          "geometry": "Fe2S2_LT_m8_E7: Fe-S=2.162 Ang",
+          "E_tower": -4.497569907894926,
+          "n_orbs": 40,
+          "residual_mHa": null,
+          "chem_ok": true,
+          "method": "tower_direct",
+          "simulated": false
+        }
+      },
+      "step_reference_energies": [
+        0.0,
+        -1.4991899692983088,
+        -2.376159882795121,
+        -2.997061463887285,
+        -3.481011309287065,
+        -3.8753498520934295,
+        -4.208758339408996,
+        -4.497569907894926
+      ],
+      "E_ref_final": -4.497569907894926,
+      "chemical_accuracy_ok": true,
+      "qpe_path": "riemann_scaffold_part_b",
+      "dataset_dir": "/Users/padmevajra/Desktop/NanoProtogeny/datasets/hybrids/hybridtower/nitrogenase_lt_m8/k11_nitrogenase_lt_m8",
+      "elapsed_s": 0.0
+    }
+  },
+  "framework": "Modular Quantum Emulator \u2014 Path R (Riemann Scaffold)",
+  "n_orbitals": 40,
+  "timestamp": "2026-06-14T13:46:34Z"
+}
