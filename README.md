@@ -202,6 +202,608 @@ source .venv/bin/activate  # Linux/Mac; .venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
+
+# Generates datasets: contains per reachtion stoichiometry step 1e and 2e integrals
+
+```bash
+# New command
+mqe generate-data --mechanism nitrogenase_lt \
+  --basis '{"Fe":"def2-TZVP","S":"def2-TZVP"}' \
+  --output-dir datasets/baseline
+
+# ── Fe2S2 reductive cycles ────────────────────────────────────────────────────
+# Atoms: Fe, S only
+mqe generate-data \
+  --mechanism nitrogenase_lt \
+  --basis '{"Fe":"def2-TZVP","S":"def2-TZVP"}' \
+  --output-dir datasets/baseline
+
+# ── Fe2S2 closed-loop ────────────────────────────────────────────────────
+mqe generate-data \
+  --mechanism nitrogenase_closed_loop \
+  --basis '{"Fe":"def2-TZVP","S":"def2-TZVP"}' \
+  --output-dir datasets/baseline
+
+# ── Fe4S4 cubane ─────────────────────────────────────────────────────────────
+# Atoms: Fe, S only (same as Fe2S2 family)
+mqe generate-data \
+  --mechanism nitrogenase_fe4s4 \
+  --basis '{"Fe":"def2-TZVP","S":"def2-TZVP"}' \
+  --output-dir datasets/baseline
+
+# ── Nitrogenase FeMoco─────────────────────────────────────────────────────────
+mqe generate-data \
+  --mechanism nitrogenase_femoco \
+  --basis '{"Fe":"def2-SVP","Mo":"def2-TZVP","S":"def2-SVP","C":"cc-pVDZ","N":"cc-pVTZ","O":"cc-pVDZ"}' \
+  --output-dir datasets/baseline
+
+# ── PSII (Fe2S2 proxy, not Mn — the non-photo spec uses the same Fe2S2 geometry) ─── 
+# Atoms: Fe, S only
+mqe generate-data \
+  --mechanism psii \
+  --basis '{"Fe":"def2-TZVP","S":"def2-TZVP"}' \
+  --output-dir datasets/baseline
+
+# ── PSII photo (Mn2O2 proxy geometry — _psii_photo_geometry_at_step) ──────────
+# Atoms: Mn, O only. Mn is Z=25, well within def2-TZVP all-electron range.
+mqe generate-data \
+  --mechanism psii_photo \
+  --basis '{"Mn":"def2-TZVP","O":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── Haber-Bosch (Fe2 surface + N, H intermediates) ───────────────────────────
+# Atoms: Fe, N, H. No S. H is light — cc-pVTZ is over-specified but harmless.
+mqe generate-data \
+  --mechanism haber_bosch \
+  --basis '{"Fe":"def2-TZVP","N":"cc-pVTZ","H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# poetry run python mqe_datasets.py \
+#   --mechanism haber_bosch \
+#   --basis '{"Fe":"def2-TZVP","N":"ma-def2-TZVP","H":"def2-SVP"}' \
+#   --output-dir datasets/baseline/
+
+# ── Anammox proxy (Fe + N, H — hydrazine synthase active site) ───────────────
+# Atoms: Fe (single centre), N, H
+mqe generate-data \
+  --mechanism anammox_proxy \
+  --basis '{"Fe":"def2-TZVP","N":"cc-pVTZ","H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── Ethylene epoxidation (Ag3 surface + C, H, O) ─────────────────────────────
+# Atoms: Ag (Z=47 — needs ECP), C, H, O
+# Ag requires def2-SVP-PP or def2-TZVPP (which bundles the Stuttgart ECP).
+# def2-TZVPP is the correct all-in-one string for PySCF's basis registry.
+mqe generate-data \
+  --mechanism ethylene_epoxidation \
+  --basis '{"Ag":"def2-TZVPP","C":"cc-pVTZ","O":"cc-pVTZ","H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── Thymine dimer ─────────────────────────────────────────────────────────────
+mqe generate-data \
+  --mechanism thymine_dimer_proxy \
+  --basis '{"C":"aug-cc-pVTZ","H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── RNR radical proxy (C, O, H, S — thiyl radical + ribose scaffold) ──────────
+# Atoms: C, O, H, S. S (Z=16) is well within all-electron range.
+# S carries the radical: def2-TZVP for S gives better spin-density description.
+# C, O, H on the ribose scaffold: cc-pVTZ is appropriate.
+mqe generate-data \
+  --mechanism rnr_radical_proxy \
+  --basis '{"S":"def2-TZVP","C":"cc-pVTZ","O":"cc-pVTZ","H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline/
+
+# poetry run python mqe_datasets.py \
+#   --mechanism rnr_radical_proxy \
+#   --basis '{"S":"def2-SVP","C":"cc-pVTZ","O":"cc-pVTZ","H":"cc-pVTZ"}' \
+#   --output-dir datasets/baseline
+
+# ── CYP450 metabolism (Fe, O, S, N — porphyrin iron-oxo active site) ─────────
+# Atoms: Fe (centre), O (ferryl), S (proximal thiolate), N×4 (porphyrin equatorial)
+mqe generate-data \
+  --mechanism cyp450_metabolism \
+  --basis '{"Fe":"def2-TZVP","S":"def2-TZVP","O":"cc-pVTZ","N":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── ATP hydrolysis ───────────────────────────────────────────────────────────
+mqe generate-data \
+  --mechanism atp_hydrolysis_proxy \
+  --basis '{"P":"aug-cc-pVTZ","O":"aug-cc-pVTZ","H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── Hydrogenase reduction (H2 — H only) ───────────────────────────────────────
+mqe generate-data \
+  --mechanism hydrogenase \
+  --basis '{"H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── Hydrogenase oxidation (H2 — H only) ───────────────────────────────────────
+mqe generate-data \
+  --mechanism hydrogenase_oxidation \
+  --basis '{"H":"cc-pVTZ"}' \
+  --output-dir datasets/baseline
+
+# ── Reversible quinone ($$Q + 2e^- + 2H^+ \rightleftharpoons QH_2$$) ────────
+mqe generate-data \
+  --mechanism reversible_quinone \
+  --basis '{"H":"aug-cc-pVTZ"}' \
+  --output-dir datasets/baseline
+```
+
+# Usage: Quantum Phase Estimation with Native MQE QPE (default)
+
+```shell
+mqe run --mechanism nitrogenase_lt \
+  --dataset-dir datasets/baseline/nitrogenase_lt \
+  --output stoichiometry-mqeqpe/nitrogenase_lt_mqeqpe_results.json
+
+# ──────────────────────────────────────────────────────────────────────────
+# CORE / ARTICLE MECHANISMS
+# ──────────────────────────────────────────────────────────────────────────
+# Passed Complete
+mqe run --mechanism nitrogenase_lt \
+  --dataset-dir datasets/baseline/nitrogenase_lt \
+  --output stoichiometry-mqeqpe/nitrogenase_lt_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism psii \
+  --dataset-dir datasets/baseline/psii \
+  --output stoichiometry-mqeqpe/psii_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism hydrogenase \
+  --dataset-dir datasets/baseline/hydrogenase \
+  --output stoichiometry-mqeqpe/hydrogenase_mqeqpe_results.json
+
+# ──────────────────────────────────────────────────────────────────────────
+# SURFACE / HETEROGENEOUS CATALYSIS
+# ──────────────────────────────────────────────────────────────────────────
+# Passed Complete
+mqe run --mechanism haber_bosch \
+  --dataset-dir datasets/baseline/haber_bosch \
+  --output stoichiometry-mqeqpe/haber_bosch_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism nitrogenase_fe4s4 \
+  --dataset-dir datasets/baseline/nitrogenase_fe4s4 \
+  --output stoichiometry-mqeqpe/nitrogenase_fe4s4_mqeqpe_results.json
+
+# To do — no dataset directory yet
+# mqe run --mechanism nitrogenase_femoco --dataset-dir ../datasets/ufc_datasets_pubquality --output stoichiometry-mqeqpe/nitrogenase_femoco_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism ethylene_epoxidation \
+  --dataset-dir datasets/baseline/ethylene_epoxidation \
+  --output stoichiometry-mqeqpe/ethylene_epoxidation_mqeqpe_results.json
+
+# ──────────────────────────────────────────────────────────────────────────
+# BIOLOGICAL / ENZYMATIC PROXIES
+# ──────────────────────────────────────────────────────────────────────────
+# Passed Complete
+mqe run --mechanism thymine_dimer_proxy \
+  --dataset-dir datasets/baseline/thymine_dimer_proxy \
+  --output stoichiometry-mqeqpe/thymine_dimer_proxy_mqeqpe_results.json
+
+# ──────────────────────────────────────────────────────────────────────────
+# BIOLOGICAL / ENZYMATIC PROXIES
+# ──────────────────────────────────────────────────────────────────────────
+# Passed Complete
+mqe run --mechanism anammox_proxy \
+  --dataset-dir datasets/baseline/anammox_proxy \
+  --output stoichiometry-mqeqpe/anammox_proxy_mqeqpe_results.json
+
+# ──────────────────────────────────────────────────────────────────────────
+# BIOLOGICAL / ENZYMATIC PROXIES
+# ──────────────────────────────────────────────────────────────────────────
+# Passed Complete
+mqe run --mechanism atp_hydrolysis_proxy \
+  --dataset-dir datasets/baseline/atp_hydrolysis_proxy \
+  --output stoichiometry-mqeqpe/atp_hydrolysis_proxy_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism cyp450_metabolism \
+  --dataset-dir datasets/baseline/cyp450_metabolism \
+  --output stoichiometry-mqeqpe/cyp450_metabolism_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism rnr_radical_proxy \
+  --dataset-dir datasets/baseline/rnr_radical_proxy \
+  --output stoichiometry-mqeqpe/rnr_radical_proxy_mqeqpe_results.json
+
+# ──────────────────────────────────────────────────────────────────────────
+# REVERSIBLE / ADVANCED CYCLES
+# ──────────────────────────────────────────────────────────────────────────
+# Passed Complete
+mqe run --mechanism hydrogenase_oxidation \
+  --dataset-dir datasets/baseline/hydrogenase_oxidation \
+  --output stoichiometry-mqeqpe/hydrogenase_oxidation_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism reversible_quinone \
+  --dataset-dir datasets/baseline/reversible_quinone \
+  --output stoichiometry-mqeqpe/reversible_quinone_mqeqpe_results.json
+
+# Passed Complete
+mqe run --mechanism nitrogenase_closed_loop \
+  --dataset-dir datasets/baseline/nitrogenase_closed_loop \
+  --output stoichiometry-mqeqpe/nitrogenase_closed_loop_mqeqpe_results.json
+
+# ──────────────────────────────────────────────────────────────────────────
+# PHOTO-DRIVEN MECHANISMS
+# ──────────────────────────────────────────────────────────────────────────
+# Passed Complete
+mqe run --mechanism psii_photo \
+  --dataset-dir datasets/baseline/psii_photo \
+  --output stoichiometry-mqeqpe/psii_photo_mqeqpe_results.json
+
+mqe run --mechanism nitrogenase_lt_m8 \
+  --dataset-dir datasets/baseline/nitrogenase_lt_m8 \
+  --output stoichiometry-mqeqpe/nitrogenase_lt_m8_mqeqpe_results.json
+
+mqe run --mechanism nitrogenase_lt_parallel \
+  --dataset-dir datasets/baseline/nitrogenase_lt_parallel \
+  --output stoichiometry-mqeqpe/nitrogenase_lt_parallel_mqeqpe_results.json
+```
+
+# Full example
+```shell
+mqe generate-data --mechanism nitrogenase_lt \
+  --basis '{"Fe":"def2-TZVP","S":"def2-TZVP"}' \
+  --output-dir datasets/baseline
+
+
+[21:19:49] INFO     | [GENERATE] mechanism='nitrogenase_lt' source='pyscf' n_orbitals=4 output_dir=src/nanoprotogeny/datasets/baseline
+[21:19:49] INFO     | 
+====================================================================
+[21:19:49] INFO     | [MQE-GEN] Mechanism: NITROGENASE_LT
+[21:19:49] INFO     |   M=8 steps | m=4 (ℤ_4) | N=4 orbitals
+[21:19:49] INFO     |   Expected e⁻: 8 | Expected Σν: 16 ≡ 0 (mod 4)
+[21:19:49] INFO     | ====================================================================
+[21:19:49] INFO     | [STOICH] Phase closure: [✓] Σν=16 mod 4 = 0
+[21:19:49] INFO     | [STOICH] Electron count: [✓] actual=8 expected=8
+[21:19:49] INFO     | [MQE-STEP] nitrogenase_lt | n=0/7 | geo='Fe2S2 E0: Fe-S=2.260 Ang' | ncas=4
+[21:19:49] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:19:49] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:19:49] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:19:49] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:19:49] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:19:49] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + atom guess
+[21:22:02] INFO     | [SCF] Level 1 converged: E = -3319.6799636887 Ha
+[21:22:09] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:22:09] INFO     | [TOWER] Saved h1_full_step00.npy (shape=(76, 76)) + eri_packed_step00.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:22:11] INFO     | [CASCI] E_total = -3319.6799636887 Ha  (converged)
+[21:22:12] INFO     | [CASCI] E_core = -3316.9153386833 Ha
+[21:22:12] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:22:12] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:22:12] INFO     | [REF] E_FCI = -3319.6799636887 Ha
+[21:22:12] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:22:12] INFO     | [ERI] 20 unique (pq|rs) channels retained.
+[21:22:12] INFO     |   [STEP 0] E_FCI=-3319.67996369 Ha | ν=2 | k^(0)=2 | checks=[✓] | 143.7s
+[21:22:12] INFO     | [MQE-STEP] nitrogenase_lt | n=1/7 | geo='Fe2S2 E1: Fe-S=2.274 Ang' | ncas=4
+[21:22:12] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:22:12] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:22:12] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:22:12] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:22:12] INFO     | [SCF] Warm-starting step 1 from step 0 density matrix.
+[21:22:12] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:22:12] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + warm-start dm0
+[21:22:28] INFO     | [SCF] Level 1 converged: E = -3319.6784525943 Ha
+[21:22:36] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:22:36] INFO     | [TOWER] Saved h1_full_step01.npy (shape=(76, 76)) + eri_packed_step01.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:22:38] INFO     | [CASCI] E_total = -3319.6784525943 Ha  (converged)
+[21:22:39] INFO     | [CASCI] E_core = -3316.9170724425 Ha
+[21:22:39] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:22:39] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:22:39] INFO     | [REF] E_FCI = -3319.6784525943 Ha
+[21:22:39] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:22:39] INFO     | [ERI] 19 unique (pq|rs) channels retained.
+[21:22:39] INFO     |   [STEP 1] E_FCI=-3319.67845259 Ha | ν=2 | k^(1)=0 | checks=[✓] | 26.3s
+[21:22:39] INFO     | [MQE-STEP] nitrogenase_lt | n=2/7 | geo='Fe2S2 E2: Fe-S=2.288 Ang' | ncas=4
+[21:22:39] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:22:39] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:22:39] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:22:39] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:22:39] INFO     | [SCF] Warm-starting step 2 from step 1 density matrix.
+[21:22:39] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:22:39] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + warm-start dm0
+[21:22:55] INFO     | [SCF] Level 1 converged: E = -3319.6768929289 Ha
+[21:23:02] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:23:02] INFO     | [TOWER] Saved h1_full_step02.npy (shape=(76, 76)) + eri_packed_step02.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:23:04] INFO     | [CASCI] E_total = -3319.6768929289 Ha  (converged)
+[21:23:05] INFO     | [CASCI] E_core = -3316.9186832216 Ha
+[21:23:05] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:23:05] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:23:05] INFO     | [REF] E_FCI = -3319.6768929289 Ha
+[21:23:05] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:23:05] INFO     | [ERI] 20 unique (pq|rs) channels retained.
+[21:23:05] INFO     |   [STEP 2] E_FCI=-3319.67689293 Ha | ν=2 | k^(2)=2 | checks=[✓] | 26.5s
+[21:23:05] INFO     | [MQE-STEP] nitrogenase_lt | n=3/7 | geo='Fe2S2 E3: Fe-S=2.302 Ang' | ncas=4
+[21:23:05] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:23:05] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:23:05] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:23:05] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:23:05] INFO     | [SCF] Warm-starting step 3 from step 2 density matrix.
+[21:23:05] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:23:05] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + warm-start dm0
+[21:23:22] INFO     | [SCF] Level 1 converged: E = -3319.6752868358 Ha
+[21:23:29] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:23:29] INFO     | [TOWER] Saved h1_full_step03.npy (shape=(76, 76)) + eri_packed_step03.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:23:31] INFO     | [CASCI] E_total = -3319.6752868358 Ha  (converged)
+[21:23:32] INFO     | [CASCI] E_core = -3316.9201743059 Ha
+[21:23:32] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:23:32] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:23:32] INFO     | [REF] E_FCI = -3319.6752868358 Ha
+[21:23:32] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:23:32] INFO     | [ERI] 18 unique (pq|rs) channels retained.
+[21:23:32] INFO     |   [STEP 3] E_FCI=-3319.67528684 Ha | ν=2 | k^(3)=0 | checks=[✓] | 27.1s
+[21:23:32] INFO     | [MQE-STEP] nitrogenase_lt | n=4/7 | geo='Fe2S2 E4: Fe-S=2.316 Ang' | ncas=4
+[21:23:32] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:23:32] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:23:32] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:23:32] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:23:32] INFO     | [SCF] Warm-starting step 4 from step 3 density matrix.
+[21:23:32] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:23:32] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + warm-start dm0
+[21:23:48] INFO     | [SCF] Level 1 converged: E = -3319.6736363695 Ha
+[21:23:55] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:23:55] INFO     | [TOWER] Saved h1_full_step04.npy (shape=(76, 76)) + eri_packed_step04.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:23:55] INFO     | [TOWER] (Janus) Also wrote h1_full.npy + eri_packed.npy for backward compatibility → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:23:57] INFO     | [CASCI] E_total = -3319.6736363695 Ha  (converged)
+[21:23:58] INFO     | [CASCI] E_core = -3316.9215568262 Ha
+[21:23:58] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:23:58] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:23:58] INFO     | [REF] E_FCI = -3319.6736363695 Ha
+[21:23:58] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:23:58] INFO     | [ERI] 19 unique (pq|rs) channels retained.
+[21:23:58] INFO     |   [STEP 4] E_FCI=-3319.67363637 Ha | ν=2 | k^(4)=2 | checks=[✓] | 25.6s
+[21:23:58] INFO     | [MQE-STEP] nitrogenase_lt | n=5/7 | geo='Fe2S2 E5: Fe-S=2.330 Ang' | ncas=4
+[21:23:58] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:23:58] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:23:58] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:23:58] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:23:58] INFO     | [SCF] Warm-starting step 5 from step 4 density matrix.
+[21:23:58] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:23:58] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + warm-start dm0
+[21:24:14] INFO     | [SCF] Level 1 converged: E = -3319.6719435517 Ha
+[21:24:21] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:24:21] INFO     | [TOWER] Saved h1_full_step05.npy (shape=(76, 76)) + eri_packed_step05.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:24:23] INFO     | [CASCI] E_total = -3319.6719435517 Ha  (converged)
+[21:24:24] INFO     | [CASCI] E_core = -3316.9228262632 Ha
+[21:24:24] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:24:24] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:24:24] INFO     | [REF] E_FCI = -3319.6719435517 Ha
+[21:24:24] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:24:24] INFO     | [ERI] 18 unique (pq|rs) channels retained.
+[21:24:24] INFO     |   [STEP 5] E_FCI=-3319.67194355 Ha | ν=2 | k^(5)=0 | checks=[✓] | 25.9s
+[21:24:24] INFO     | [MQE-STEP] nitrogenase_lt | n=6/7 | geo='Fe2S2 E6: Fe-S=2.344 Ang' | ncas=4
+[21:24:24] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:24:24] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:24:24] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:24:24] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:24:24] INFO     | [SCF] Warm-starting step 6 from step 5 density matrix.
+[21:24:24] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:24:24] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + warm-start dm0
+[21:24:40] INFO     | [SCF] Level 1 converged: E = -3319.6702103270 Ha
+[21:24:47] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:24:47] INFO     | [TOWER] Saved h1_full_step06.npy (shape=(76, 76)) + eri_packed_step06.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:24:49] INFO     | [CASCI] E_total = -3319.6702103270 Ha  (converged)
+[21:24:50] INFO     | [CASCI] E_core = -3316.9239894191 Ha
+[21:24:50] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:24:50] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:24:50] INFO     | [REF] E_FCI = -3319.6702103270 Ha
+[21:24:50] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:24:50] INFO     | [ERI] 18 unique (pq|rs) channels retained.
+[21:24:50] INFO     |   [STEP 6] E_FCI=-3319.67021033 Ha | ν=2 | k^(6)=2 | checks=[✓] | 26.3s
+[21:24:50] INFO     | [MQE-STEP] nitrogenase_lt | n=7/7 | geo='Fe2S2 E7: Fe-S=2.358 Ang' | ncas=4
+[21:24:50] INFO     | [BUILD] 4 atoms | 164 AOs | charge=0 | S=2 | basis={'Fe': 'def2-TZVP', 'S': 'def2-TZVP'} | ecp=none | unit=Angstrom
+[21:24:50] INFO     | [BUILD] nelec=(44, 40) (nalpha=44, nbeta=40)
+[21:24:50] WARNING  |   [CAS] Truncating to CAS(4,4): 80 core electrons excluded. Ensure active space matches validation target.
+[21:24:50] INFO     |   CAS(4,4) nalpha=2 nbeta=2  spin_2S=0 (total_nelec=84, core=80)
+[21:24:50] INFO     | [SCF] Warm-starting step 7 from step 6 density matrix.
+[21:24:50] INFO     | [SCF] Detected 2 transition-metal centre(s); activating metal-hardened SCF ladder.
+[21:24:50] INFO     | [SCF] Level 1: ROHF + level_shift=0.3 + damp=0.3 + warm-start dm0
+[21:25:07] INFO     | [SCF] Level 1 converged: E = -3319.6684385539 Ha
+[21:25:14] INFO     | [FULL-MO] h1_full shape=(76, 76)  eri_packed size=8561476 (65.3 MB)  n_orbs=76
+[21:25:14] INFO     | [TOWER] Saved h1_full_step07.npy (shape=(76, 76)) + eri_packed_step07.npy (65.3 MB) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:25:16] INFO     | [CASCI] E_total = -3319.6684385539 Ha  (converged)
+[21:25:17] INFO     | [CASCI] E_core = -3316.9250524083 Ha
+[21:25:17] INFO     | [CASCI] Active MO occupations (noons, ncas=4): 1.0000 1.0000 1.0000 1.0000  sum=4.0000
+[21:25:17] INFO     | [REF] Exact FCI: ncas=4, nalpha=2, nbeta=2 ...
+[21:25:17] INFO     | [REF] E_FCI = -3319.6684385539 Ha
+[21:25:17] INFO     | [ERI] Compressing 4^4 tensor (threshold=1.0e-08) ...
+[21:25:17] INFO     | [ERI] 18 unique (pq|rs) channels retained.
+[21:25:17] INFO     |   [STEP 7] E_FCI=-3319.66843855 Ha | ν=2 | k^(7)=0 | checks=[✓] | 27.1s
+[21:25:17] INFO     | [TOWER] Saved noons.npy (shape=(164,), n_core=40, n_active=4) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt/noons.npy
+[21:25:17] INFO     | [TOWER] Saved mo_energies.npy (shape=(164,)) → src/nanoprotogeny/datasets/baseline/nitrogenase_lt/mo_energies.npy
+
+====================================================================
+ MQE DATASET: NITROGENASE_LT
+====================================================================
+  ℤ_4 phase closure : [✓] Σν=16 mod 4 = 0
+  Electron count      : [✓] 8 e⁻ (expected 8)
+  Energy ordering     : [✓]
+  All algebraic checks: [✓] PASSED
+
+  Step breakdown:
+    n=0: -3319.67996369 Ha  [✓]  Fe2S2 E0: Fe-S=2.260 Ang
+    n=1: -3319.67845259 Ha  [✓]  Fe2S2 E1: Fe-S=2.274 Ang
+    n=2: -3319.67689293 Ha  [✓]  Fe2S2 E2: Fe-S=2.288 Ang
+    n=3: -3319.67528684 Ha  [✓]  Fe2S2 E3: Fe-S=2.302 Ang
+    n=4: -3319.67363637 Ha  [✓]  Fe2S2 E4: Fe-S=2.316 Ang
+    n=5: -3319.67194355 Ha  [✓]  Fe2S2 E5: Fe-S=2.330 Ang
+    n=6: -3319.67021033 Ha  [✓]  Fe2S2 E6: Fe-S=2.344 Ang
+    n=7: -3319.66843855 Ha  [✓]  Fe2S2 E7: Fe-S=2.358 Ang
+====================================================================
+
+
+
+❯ mqe run --mechanism nitrogenase_lt \
+  --dataset-dir datasets/baseline/nitrogenase_lt \
+  --output stoichiometry-mqeqpe/nitrogenase_lt_mqeqpe_results.json
+
+
+[21:25:37] INFO     | [DATASET MODE] IntegralState initialised empty. StepwiseIntegralStore will load H_n per step at runtime.
+[21:25:37] INFO     | [CONFIG] Backend: 'ionq-sim' → 'simulator' | folds=[1, 3, 5] shots=8192
+[21:25:37] INFO     | [MQE] Step-wise dataset directory: /Users/padmevajra/Desktop/NanoProtogeny/src/nanoprotogeny/datasets/baseline/nitrogenase_lt
+[21:25:37] INFO     | [StepStore] Loaded manifest for 'nitrogenase_lt': M=8 steps, m=4 (ℤ_4)
+[21:25:37] INFO     | [HW-Runner] Loaded StepwiseIntegralStore for 'nitrogenase_lt' from /Users/padmevajra/Desktop/NanoProtogeny/src/nanoprotogeny/datasets/baseline/nitrogenase_lt/nitrogenase_lt
+
+==============================================================================
+ VANC-QPE PIPELINE VALIDATION: NITROGENASE_LT
+==============================================================================
+  Mechanism : nitrogenase_lt
+  N orbitals: 4 | Steps M=8 | Virtual modulus m=4 (ℤ_4)
+  S_target  : 1.5
+  e⁻ inject : 8 | e⁻ eject: 0 | Net e⁻: 8
+  Σν (fwd)  : 16 | Σν (inv): 0 | Net Σν: 16
+  Phase closure ≡ 0 (mod 4): [✓] SATISFIED
+  Photons abs: 0 | emit: 0 | net: 0 | phi_photon=1.5708 rad
+  Non-adiabatic crossings: 1
+  Description: Lowe-Thorneley nitrogenase LT cycle. E0→E8 via 8 sequential forward PCET steps (8e⁻, 8H⁺, 16 ATP). Janus crossing at E4→E5. Fully reversible framework: A_n_eject/P_n_eject/B_n_decouple explicitly zeroed for canonical LT; ready for back-reaction modeling. Net-flux phase closure: Σ(ν-ν†)=16 ≡ 0 (mod 4). Net e⁻: 8.
+  Integral source: step-wise JSON datasets (/Users/padmevajra/Desktop/NanoProtogeny/src/nanoprotogeny/datasets/baseline/nitrogenase_lt/nitrogenase_lt/step_XX.json)
+------------------------------------------------------------------------------
+  [REG] 4 logical (d=4) + 4 virtual (d=4) qudits | integrals: dataset (/Users/padmevajra/Desktop/NanoProtogeny/src/nanoprotogeny/datasets/baseline/nitrogenase_lt/nitrogenase_lt)
+
+  [ALGEBRAIC] Net-flux phase closure validation (ℤ_4)...
+
+[STOICHIOMETRY] ℤ_4 Net-Flux Phase Closure & Electron Count
+  e⁻ inject : 8 | e⁻ eject: 0 | Net: 8 (expected 8) [✓]
+  Phase:    Σ(ν−ν†)=16, mod 4 = 0 (expected 0) [✓]
+  Step log:
+    n=00: ν=2, k^(n)=2, Σe_net=1
+    n=01: ν=2, k^(n)=0, Σe_net=2
+    n=02: ν=2, k^(n)=2, Σe_net=3
+    n=03: ν=2, k^(n)=0, Σe_net=4
+    n=04: ν=2, k^(n)=2, Σe_net=5
+    n=05: ν=2, k^(n)=0, Σe_net=6
+    n=06: ν=2, k^(n)=2, Σe_net=7
+    n=07: ν=2, k^(n)=0, Σe_net=8
+  Overall: [✓] PASSED
+
+  [LOOP] Building M=8 MQE step blocks...
+[21:25:37] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 20 g_full
+[21:25:37] INFO     |   [StepStore] n=00: Fe2S2 E0: Fe-S=2.260 Ang | E_ref=-3319.67996369 Ha | ν=2 | k^(n)=2
+[21:25:37] INFO     | [ERI DIAG] n_orbs=4, g_full entries=20
+[21:25:37] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:25:38] INFO     | [HW-B0] Using step-specific integrals: N=4, E_core=-3316.915339 Ha
+[21:25:38] INFO     |   [HW n=00] A_n=[0] | ν=2 k^(n)=2 | Σe_net=1 | 
+[21:25:38] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 19 g_full
+[21:25:38] INFO     |   [StepStore] n=01: Fe2S2 E1: Fe-S=2.274 Ang | E_ref=-3319.67845259 Ha | ν=2 | k^(n)=0
+[21:25:38] INFO     | [ERI DIAG] n_orbs=4, g_full entries=19
+[21:25:38] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:25:39] INFO     | [HW-B1] Using step-specific integrals: N=4, E_core=-3316.917072 Ha
+[21:25:39] INFO     |   [HW n=01] A_n=[1] | ν=2 k^(n)=0 | Σe_net=2 | 
+[21:25:39] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 20 g_full
+[21:25:39] INFO     |   [StepStore] n=02: Fe2S2 E2: Fe-S=2.288 Ang | E_ref=-3319.67689293 Ha | ν=2 | k^(n)=2
+[21:25:39] INFO     | [ERI DIAG] n_orbs=4, g_full entries=20
+[21:25:39] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:25:40] INFO     | [HW-B2] Using step-specific integrals: N=4, E_core=-3316.918683 Ha
+[21:25:40] INFO     |   [HW n=02] A_n=[2] | ν=2 k^(n)=2 | Σe_net=3 | 
+[21:25:40] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 18 g_full
+[21:25:40] INFO     |   [StepStore] n=03: Fe2S2 E3: Fe-S=2.302 Ang | E_ref=-3319.67528684 Ha | ν=2 | k^(n)=0
+[21:25:40] INFO     | [ERI DIAG] n_orbs=4, g_full entries=18
+[21:25:40] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:25:41] INFO     | [HW-B3] Using step-specific integrals: N=4, E_core=-3316.920174 Ha
+[21:25:41] INFO     |   [HW n=03] A_n=[3] | ν=2 k^(n)=0 | Σe_net=4 | 
+[21:25:41] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 19 g_full
+[21:25:41] INFO     |   [StepStore] n=04: Fe2S2 E4: Fe-S=2.316 Ang | E_ref=-3319.67363637 Ha | ν=2 | k^(n)=2
+[21:25:41] INFO     | [ERI DIAG] n_orbs=4, g_full entries=19
+[21:25:41] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:25:42] INFO     | [HW-B4] Using step-specific integrals: N=4, E_core=-3316.921557 Ha
+[21:25:42] INFO     | [HW] Step n=4: Janus crossing applied (orbitals p=0, q=1, δCI=1.60e-03)
+[21:25:42] INFO     |   [HW n=04] A_n=[0] | ν=2 k^(n)=2 | Σe_net=5 | ⚡ Janus
+
+  [HW-QPE] Checkpoint n=4 (Janus E_4→E_5) | Fe2S2 E4: Fe-S=2.316 Ang
+    E_0 (exact diag) = -2.75207954 Ha | E_ref (FCI) = -2.75207954 Ha
+[21:26:14] INFO     | [VANC-TAU-SELECT] ✗ τ_max=0.32 Ha⁻¹  n_max=16  |E_ZNE−E_ref|=10.2625 mHa  [exceeds 1.6 mHa budget]
+[21:26:31] INFO     | [VANC-TAU-SELECT] ✓ τ_max=0.16 Ha⁻¹  n_max=8  |E_ZNE−E_ref|=0.6399 mHa  [within 1.6 mHa budget]
+[21:26:31] INFO     | [VANC-QPE n=4] τ-seq (adaptive): [0.02, 0.04, 0.08, 0.16] | n_max=8
+[21:26:31] INFO     | [VANC-QPE n=4] η_V=0.995211 (gates/step=12, n_ctrl=96)
+    E_ZNE (exp) = -2.75143965 Ha | |E_ZNE−E_ref| = 0.6399 mHa [✓]
+[21:26:47] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 18 g_full
+[21:26:47] INFO     |   [StepStore] n=05: Fe2S2 E5: Fe-S=2.330 Ang | E_ref=-3319.67194355 Ha | ν=2 | k^(n)=0
+[21:26:47] INFO     | [ERI DIAG] n_orbs=4, g_full entries=18
+[21:26:47] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:26:48] INFO     | [HW-B5] Using step-specific integrals: N=4, E_core=-3316.922826 Ha
+[21:26:48] INFO     |   [HW n=05] A_n=[1] | ν=2 k^(n)=0 | Σe_net=6 | 
+[21:26:48] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 18 g_full
+[21:26:48] INFO     |   [StepStore] n=06: Fe2S2 E6: Fe-S=2.344 Ang | E_ref=-3319.67021033 Ha | ν=2 | k^(n)=2
+[21:26:48] INFO     | [ERI DIAG] n_orbs=4, g_full entries=18
+[21:26:48] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:26:49] INFO     | [HW-B6] Using step-specific integrals: N=4, E_core=-3316.923989 Ha
+[21:26:49] INFO     |   [HW n=06] A_n=[2] | ν=2 k^(n)=2 | Σe_net=7 | 
+[21:26:49] INFO     | [PARSE] Loaded: 4 h_diag, 6 h_hop, 18 g_full
+[21:26:49] INFO     |   [StepStore] n=07: Fe2S2 E7: Fe-S=2.358 Ang | E_ref=-3319.66843855 Ha | ν=2 | k^(n)=0
+[21:26:49] INFO     | [ERI DIAG] n_orbs=4, g_full entries=18
+[21:26:49] INFO     | [ERI DIAG] Expected unique (chemist): ~35, full tensor: 256
+[21:26:49] INFO     | [HW-B7] Using step-specific integrals: N=4, E_core=-3316.925052 Ha
+[21:26:49] INFO     |   [HW n=07] A_n=[3] | ν=2 k^(n)=0 | Σe_net=8 | 
+
+  [HW-QPE] Checkpoint n=7 (E_7→E_8) | Fe2S2 E7: Fe-S=2.358 Ang
+    E_0 (exact diag) = -2.74338615 Ha | E_ref (FCI) = -2.74338615 Ha
+[21:26:50] INFO     | [VANC-QPE n=7] τ-seq (cached): [0.02, 0.04, 0.08, 0.16] | n_max=8
+[21:26:50] INFO     | [VANC-QPE n=7] η_V=0.995211 (gates/step=12, n_ctrl=96)
+    E_ZNE (exp) = -2.74279109 Ha | |E_ZNE−E_ref| = 0.5951 mHa [✓]
+
+  [COMPILATION] Profiling full multi-step sequence to Forte pulses...
+[21:27:06] INFO     | [SCHED] 180 ops → 72 moments (was 103 sequential)
+[21:27:06] INFO     | [SCHED] Pre-compile gate type breakdown: ParamCoulombPhaseGate=48, ParamZClockGate=32, CompositeVirtualShiftGate=24, ParamURShiftGate=22, ZenoStabilizeGate=20, ElectronShiftGate=8, ProtonPhaseGate=8, ConformationalShiftGate=8, CompositeCofactorCouplingGate=8, CrossManifoldSWAPGate=2
+[21:27:06] INFO     | [BASIS-CANCEL] Cancelled 128 basis-change gates (128 BLOG/BLOG†, 0 BVIRT/BVIRT†) → ~2368 native ops saved
+[21:27:11] INFO     | [HW-INFO] → Total Compiled Moments: 9201
+[21:27:11] INFO     | [HW-INFO] → Native Footprint: GPI=5480, GPI2=10960, ZZ=2368, Other=0
+[21:27:11] INFO     | [HW-INFO] → MatrixGate Fallback: [✓] ZERO
+[21:27:12] INFO     | [HW-INFO] → Gate contribution breakdown (type | count | standalone→effective | total | verified):
+[21:27:12] INFO     | [HW-INFO]     ParamCoulombPhaseGate                       48 × 217→180  = 8640  [✓]
+[21:27:12] INFO     | [HW-INFO]     ZenoStabilizeGate                           20 × 240      = 4800  [✓]
+[21:27:12] INFO     | [HW-INFO]     CompositeCofactorCouplingGate                8 × 427      = 3416  [✓]
+[21:27:12] INFO     | [HW-INFO]     ParamZClockGate                             32 × 27       = 864  [✓]
+[21:27:12] INFO     | [HW-INFO]     CrossManifoldSWAPGate                        2 × 264      = 528  [✓]
+[21:27:12] INFO     | [HW-INFO]     CompositeVirtualShiftGate                   24 × 20       = 480  [✓]
+[21:27:12] INFO     | [HW-INFO]     ConformationalShiftGate                      8 × 27       = 216  [✓]
+[21:27:12] INFO     | [HW-INFO]     ElectronShiftGate                            8 × 27       = 216  [✓]
+[21:27:12] INFO     | [HW-INFO]     ProtonPhaseGate                              8 × 20       = 160  [✓]
+[21:27:12] INFO     | [HW-INFO]     ParamURShiftGate                            22 × 0        = 0  [✗ shape]
+[21:27:12] INFO     | [HW-INFO] → Semantic warrant extraction...
+
+[DEBUG] Calibrated Transmission η' = 0.9000
+[DEBUG] Final Target Population = 0.6561 (Expected: ~0.9000)
+
+  [VERIFY] Stoichiometric invariance suite...
+  [✓] (i) Net electron flux conservation: <N_e>_net = 8 (injected 8 − ejected 0) , expected 8
+  [✓] (ii) Net-flux phase closure: Σ(ν−ν†)=16 mod 4 = 0 (expected 0)
+  [✓] (iii) Trace preservation: Tr(ρ_final) = 1.00000000 (expected 1.0)
+  [✓] (iv) Spin-parity holding: min ω = 0.9000 vs η=0.9 [AntiTh+SynTh (high-spin)]
+
+[VANC-QPE RESULTS] nitrogenase_lt
+  Integral source: step-wise JSON (src/nanoprotogeny/datasets/baseline/nitrogenase_lt/nitrogenase_lt/)
+  ┌────────────────────────────────────────┬────────────────────┬────────────┐
+  │ Metric                                 │ Value              │ Status     │
+  ├────────────────────────────────────────┼────────────────────┼────────────┤
+  │ ℤ_4 Phase Closure (k≡0 mod 4)          │ Σν=16              │ [✓] OK     │
+  │ Electron Conservation (<N_e>_final)    │ 8 e⁻               │ [✓] OK     │
+  │ Trace Preservation (Tr ρ=1)            │ -                  │ [✓] OK     │
+  │ Spin-Parity Holding (η=0.9)            │ -                  │ [✓] OK     │
+  ├────────────────────────────────────────┼────────────────────┼────────────┤
+  │ VANC-QPE|ZNE n=4 (Janus E_4→E_5) [DS]  │ 0.6399 mHa         │ [✓] OK     │
+  │ VANC-QPE|ZNE n=7 (E_7→E_8) [DS]        │ 0.5951 mHa         │ [✓] OK     │
+  ├────────────────────────────────────────┼────────────────────┼────────────┤
+  │ OVERALL CHEMICAL ACCURACY (≤1.6 mHa)   │                    │ [✓] OK     │
+  │ STOICHIOMETRIC INVARIANCE              │                    │ [✓] OK     │
+  └────────────────────────────────────────┴────────────────────┴────────────┘
+
+  E_ref (last step) = -3319.6684385539 Ha
+  Gate algebra:      G(M) = A_HW^⊗8 ∪ A_cross^(m=4)
+  Complexity bound:  G = O(M·N³·T²·C_int/ε)
+  Elapsed:           94.91s
+
+  [✓] VANC-QPE VALIDATION PASSED
+==============================================================================
+
+[VANC-QPE] Results exported -> src/nanoprotogeny/stoichiometry-mqeqpe/nitrogenase_lt_mqeqpe_results.json
+```
+
+
 ## If you have found this software useful in your research work, cite:
 ```bibtex
 @misc{borom_mqe_2026,

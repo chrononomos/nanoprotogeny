@@ -1,0 +1,224 @@
+{
+  "mechanism": "nitrogenase_lt",
+  "description": "Lowe-Thorneley nitrogenase LT cycle. E0\u2192E8 via 8 sequential forward PCET steps (8e\u207b, 8H\u207a, 16 ATP). Janus crossing at E4\u2192E5. Fully reversible framework: A_n_eject/P_n_eject/B_n_decouple explicitly zeroed for canonical LT; ready for back-reaction modeling. Net-flux phase closure: \u03a3(\u03bd-\u03bd\u2020)=16 \u2261 0 (mod 4). Net e\u207b: 8.",
+  "M_steps": 8,
+  "m_modulus": 4,
+  "S_target": 1.5,
+  "n_orbitals": 4,
+  "basis": {
+    "Fe": "def2-TZVP",
+    "S": "def2-TZVP"
+  },
+  "stoichiometry": {
+    "mechanism": "nitrogenase_lt",
+    "m_modulus": 4,
+    "M_steps": 8,
+    "passed": true,
+    "electron_conservation": {
+      "ok": true,
+      "expected": 8,
+      "actual": 8
+    },
+    "phase_closure": {
+      "ok": true,
+      "total_nu": 16,
+      "net_nu": 16,
+      "net_nu_mod_m": 0
+    },
+    "step_count": {
+      "ok": true,
+      "expected": 8,
+      "actual": 8
+    },
+    "orbital_consistency": {
+      "ok": true
+    },
+    "phase_index_monotone": {
+      "ok": true
+    },
+    "crossing_integrity": {
+      "ok": true
+    },
+    "photon_orbital_consistency": {
+      "ok": true
+    },
+    "photon_balance": {
+      "ok": true,
+      "absorbed": 0,
+      "emitted": 0,
+      "net": 0,
+      "expected_net": 0
+    },
+    "phi_photon_sanity": {
+      "ok": true
+    }
+  },
+  "energy_ordering_ok": true,
+  "step_results": [
+    {
+      "step_n": 0,
+      "geometry": "Fe2S2 E0: Fe-S=2.260 Ang",
+      "e_ref_Ha": -3319.6799636886967,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    },
+    {
+      "step_n": 1,
+      "geometry": "Fe2S2 E1: Fe-S=2.274 Ang",
+      "e_ref_Ha": -3319.6784525943326,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    },
+    {
+      "step_n": 2,
+      "geometry": "Fe2S2 E2: Fe-S=2.288 Ang",
+      "e_ref_Ha": -3319.6768929288514,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    },
+    {
+      "step_n": 3,
+      "geometry": "Fe2S2 E3: Fe-S=2.302 Ang",
+      "e_ref_Ha": -3319.6752868357753,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    },
+    {
+      "step_n": 4,
+      "geometry": "Fe2S2 E4: Fe-S=2.316 Ang",
+      "e_ref_Ha": -3319.673636369509,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    },
+    {
+      "step_n": 5,
+      "geometry": "Fe2S2 E5: Fe-S=2.330 Ang",
+      "e_ref_Ha": -3319.6719435516793,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    },
+    {
+      "step_n": 6,
+      "geometry": "Fe2S2 E6: Fe-S=2.344 Ang",
+      "e_ref_Ha": -3319.6702103269995,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    },
+    {
+      "step_n": 7,
+      "geometry": "Fe2S2 E7: Fe-S=2.358 Ang",
+      "e_ref_Ha": -3319.6684385539365,
+      "checks": {
+        "hermiticity": true,
+        "eri_8fold_symmetry": true,
+        "phase_index_consistent": true,
+        "cumulative_electrons_consistent": true,
+        "cumulative_net_electrons_consistent": true,
+        "orbital_indices_valid": true,
+        "eri_diagonal_positive": true,
+        "h_diag_bounded": true,
+        "photon_orbital_indices_valid": true,
+        "phi_photon_energy_physical": true,
+        "cumulative_photon_consistent": true
+      },
+      "passed": true
+    }
+  ],
+  "all_algebraic_ok": true,
+  "fci_energies_Ha": [
+    -3319.6799636886967,
+    -3319.6784525943326,
+    -3319.6768929288514,
+    -3319.6752868357753,
+    -3319.673636369509,
+    -3319.6719435516793,
+    -3319.6702103269995,
+    -3319.6684385539365
+  ],
+  "generated_at": "2026-07-14T11:25:17Z",
+  "mqe_article_reference": "nanoprotogeny.theory.mqe v2026.05"
+}
