@@ -11,7 +11,7 @@
 
 ## Universal Fock Isomorphism and JW Elimination
 
-The architectural cornerstone of MQE is the **Universal Fock Isomorphism** $\iota_p : \mathcal{F}_p \xrightarrow{\,\sim\,} \mathbb{C}^4$, a site-local bijection mapping the four-dimensional Fock space of a single spin-$\tfrac{1}{2}$ orbital onto a $d=4$ qudit register. The tetralemmatic encoding is defined as:
+The architectural cornerstone of MQE is the **Universal Fock Isomorphism** $\iota_p : \mathcal{F}_p \xrightarrow{\,\sim\,} \mathbb{C}^4$, a site-local bijection mapping the four-dimensional Fock space of a single spin-$\frac{1}{2}$ orbital onto a $d=4$ qudit register. The tetralemmatic encoding is defined as:
 
 $$
 \begin{aligned}
