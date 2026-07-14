@@ -1,4 +1,3 @@
-
 # nanoprotogeny
 
 **A Polynomial-Complexity Modular Quantum Emulator for Multi-Step Fermionic Catalysis**
@@ -196,15 +195,14 @@ For the FeMoco active space ($N=76$, $N_e=113$), this ratio is approximately $5\
 ## Installation
 
 ```bash
-git clone https://github.com/chrononomos/nanoprotogeny.git
+git clone [https://github.com/chrononomos/nanoprotogeny.git](https://github.com/chrononomos/nanoprotogeny.git)
 cd nanoprotogeny
 python -m venv .venv
 source .venv/bin/activate  # Linux/Mac; .venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
-# If you use nanoprotogeny in your research, please cite:
-
+## If you have found this software useful in your research work, cite:
 ```bibtex
 @misc{borom_mqe_2026,
   author       = {Borom, Santos C.},
@@ -212,9 +210,7 @@ pip install -r requirements.txt
   year         = {2026},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.21348354},
-  url          = {https://doi.org/10.5281/zenodo.21348354},
+  url          = {[https://doi.org/10.5281/zenodo.21348354](https://doi.org/10.5281/zenodo.21348354)},
   note         = {Computer software}
 }
 ```
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21348354.svg)](https://doi.org/10.5281/zenodo.21348354)
