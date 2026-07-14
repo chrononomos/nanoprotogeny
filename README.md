@@ -4,7 +4,7 @@
 **A Polynomial-Complexity Modular Quantum Emulator for Multi-Step Fermionic Catalysis**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21348354.svg)](https://doi.org/10.5281/zenodo.21348354)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 `nanoprotogeny` is the open-source implementation of the **Modular Quantum Emulator (MQE)**, a quantum architecture designed for the chemically accurate, dynamical emulation of multi-step fermionic catalytic mechanisms. Built upon Google Cirq, the IonQ API, and PySCF, this pipeline shifts the computational paradigm from static variational minimization to exact, polynomially-bounded trajectory emulation on near-term trapped-ion hardware.
