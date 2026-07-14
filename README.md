@@ -16,9 +16,9 @@ The architectural cornerstone of MQE is the **Universal Fock Isomorphism** $\iot
 $$
 \begin{aligned}
 |0\rangle                    &\mapsto |\mathbf{Th}\rangle     = |00\rangle, \\
-|\!\uparrow\rangle           &\mapsto |\mathbf{AntiTh}\rangle = |11\rangle, \\
-|\!\downarrow\rangle         &\mapsto |\mathbf{SynTh}\rangle  = |\Psi^+\rangle, \\
-|\!\uparrow\downarrow\rangle &\mapsto |\mathbf{HoloTh}\rangle = |\Psi^-\rangle,
+|\uparrow\rangle             &\mapsto |\mathbf{AntiTh}\rangle = |11\rangle, \\
+|\downarrow\rangle           &\mapsto |\mathbf{SynTh}\rangle  = |\Psi^+\rangle, \\
+|\uparrow\downarrow\rangle   &\mapsto |\mathbf{HoloTh}\rangle = |\Psi^-\rangle,
 \end{aligned}
 $$
 
@@ -203,7 +203,7 @@ source .venv/bin/activate  # Linux/Mac; .venv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
 
-# If you found this software useful, please cite:
+# If you use nanoprotogeny in your research, please cite:
 
 ```bibtex
 @misc{borom_mqe_2026,
