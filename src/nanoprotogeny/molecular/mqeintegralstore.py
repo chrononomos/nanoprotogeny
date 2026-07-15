@@ -62,7 +62,7 @@ from nanoprotogeny.molecular.mqemolecules import MechanismTuple
 
 log = logging.getLogger(__name__)
 
-def _generate_fallback_hamiltonian() -> Tuple[Dict, Dict, Dict, Dict, float, Dict]:
+def _generate_fallback_hamiltonian() -> Tuple[Dict, Dict, Dict, Dict, Dict, float, Dict]:
     """Generate a simple but physically valid 4-orbital Hamiltonian for local testing."""
     n = 4
     h_diag = {i: -0.5 + 0.1*i for i in range(n)}

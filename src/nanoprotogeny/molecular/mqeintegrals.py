@@ -2003,7 +2003,7 @@ def main() -> None:
         sys.exit(1)
 
     # ── CASCI integrals ───────────────────────────────────────────────────
-    h1, eri_full, ecore, e_casci = extract_casci_integrals(mf, ncas, nelec_tuple)
+    h1, eri_full, ecore, e_casci, noons_active = extract_casci_integrals(mf, ncas, nelec_tuple)
 
     # ── Reference energy ──────────────────────────────────────────────────
     e_ref, ref_method = compute_reference_energy(
