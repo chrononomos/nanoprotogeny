@@ -89,17 +89,17 @@ The two group actions are not analogous—they are identical. QPE therefore adds
 
 ## Universal Polynomial Complexity
 
-For any fermionic catalytic mechanism $\mathfrak{M}$ with $N$ active orbitals, $M$ discrete steps, $n_\mathrm{cross}$ non-adiabatic crossings, Trotter order $T$, double-commutator interaction constant $C^{(2)}_\mathrm{int}$, and target accuracy $\epsilon$, the second-order (Suzuki–Trotter) pipeline actually executed satisfies:
+For any fermionic catalytic mechanism $\mathfrak{M}$ with $N$ active orbitals, $M$ discrete steps, $n_\mathrm{cross}$ non-adiabatic crossings, Trotter order $T$, double-commutator interaction constant $C_\mathrm{int}^{(2)}$, and target accuracy $\epsilon$, the second-order (Suzuki–Trotter) pipeline actually executed satisfies:
 
 $$
 \begin{aligned}
-G(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^{7/2}\,T\sqrt{C^{(2)}_\mathrm{int}}\,\log N}{\sqrt{\epsilon}}\right), \\
-D(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^{5/2}\,T\sqrt{C^{(2)}_\mathrm{int}}\,\log N}{\sqrt{\epsilon}} + n_\mathrm{cross}\right), \\
+G(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^{7/2}\,T\sqrt{C_\mathrm{int}^{(2)}}\,\log N}{\sqrt{\epsilon}}\right), \\
+D(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^{5/2}\,T\sqrt{C_\mathrm{int}^{(2)}}\,\log N}{\sqrt{\epsilon}} + n_\mathrm{cross}\right), \\
 N_\mathrm{shots} &= \mathcal{O}\left(\frac{1}{\epsilon^2}\right).
 \end{aligned}
 $$
 
-All three bounds are strictly polynomial in $N$, $M$, $T$, $\epsilon^{-1}$, $n_\mathrm{cross}$, and $C^{(2)}_\mathrm{int}$. The $\log N$ factor is the Jordan–Wigner parity read — polylogarithmic, and it does not affect the polynomial class. The virtual register dimension $m$ contributes only a constant multiplicative $\mathcal{O}(\log m)$ (Solovay–Kitaev) to the virtual-sector decomposition; it does not alter the asymptotic class. Because the auxiliary sector is algebraically independent of the electronic Hamiltonian, the eight extensions (nuclear quantum effects, relativistic and spin–orbit coupling, open-system dissipation, periodic boundary conditions, and more) are absorbed under a single unified certificate $G^{\mathrm{ext}}=\mathcal{O}(MN^{7/2}T\sqrt{C^{(2)}_\mathrm{int}}/\sqrt{\epsilon})$ without changing the complexity class.
+All three bounds are strictly polynomial in $N$, $M$, $T$, $\epsilon^{-1}$, $n_\mathrm{cross}$, and $C_\mathrm{int}^{(2)}$. The $\log N$ factor is the Jordan–Wigner parity read — polylogarithmic, and it does not affect the polynomial class. The virtual register dimension $m$ contributes only a constant multiplicative $\mathcal{O}(\log m)$ (Solovay–Kitaev) to the virtual-sector decomposition; it does not alter the asymptotic class. Because the auxiliary sector is algebraically independent of the electronic Hamiltonian, the eight extensions (nuclear quantum effects, relativistic and spin–orbit coupling, open-system dissipation, periodic boundary conditions, and more) are absorbed under a single unified certificate $G^{\mathrm{ext}}=\mathcal{O}(MN^{7/2}T\sqrt{C_\mathrm{int}^{(2)}}/\sqrt{\epsilon})$ without changing the complexity class.
 
 The advantage over classical exact methods is the contrast between an **exponential** and a **polynomial** cost. Exact real-time, non-adiabatic propagation of the FeMoco $(113e, 76o)$ active space by Full Configuration Interaction requires a Hilbert space of dimension $>10^{36}$ and the evaluation of $\sim 3.3\times10^7$ irreducible two-electron channels; the MQE cost is bounded by the strictly polynomial $G,\,D,\,N_\mathrm{shots}$ above.
 
