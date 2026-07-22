@@ -8,7 +8,7 @@
 
 `nanoprotogeny` is the open-source implementation of the **Modular Quantum Emulator (MQE)**, a quantum architecture designed for the chemically accurate, dynamical emulation of multi-step fermionic catalytic mechanisms. Built upon Google Cirq, the IonQ API, and PySCF, this pipeline shifts the computational paradigm from static variational minimization to exact, polynomially-bounded trajectory emulation on near-term trapped-ion hardware.
 
-> **Reference.** This software accompanies the pre-print: Santos C. Borom, *The Modular Quantum Emulator: Chemically Accurate, Polynomial-Cost Simulation of Multi-Step Metalloenzyme Catalysis in a Dissipative Protein Environment*, ChemRxiv (2026), [doi:10.26434/chemrxiv.15006143/v1](https://doi.org/10.26434/chemrxiv.15006143/v1). The claims and figures below track that pre-print; see [Citation](#citation) to reference the paper and the code.
+> **Reference.** This software accompanies the pre-print: Santos C. Borom, *The Modular Quantum Emulator: Chemically Accurate, Polynomial-Cost Simulation of Multi-Step Metalloenzyme Catalysis in a Dissipative Protein Environment*, ChemRxiv (2026), [doi:10.26434/chemrxiv.15006143/v2](https://doi.org/10.26434/chemrxiv.15006143/v2). The claims and figures below track that pre-print; see [Citation](#citation) to reference the paper and the code.
 
 ## Universal Fock Isomorphism and Jordan–Wigner Reduction
 
@@ -816,10 +816,11 @@ If you use this work, please cite **both** the paper and the software.
              Catalysis in a Dissipative Protein Environment},
   journal = {ChemRxiv},
   volume  = {2026},
-  number  = {0716},
+  number  = {0721},
   year    = {2026},
-  doi     = {10.26434/chemrxiv.15006143/v1},
-  url     = {https://chemrxiv.org/doi/abs/10.26434/chemrxiv.15006143/v1}
+  doi     = {10.26434/chemrxiv.15006143/v2},
+  url     = {https://chemrxiv.org/doi/abs/10.26434/chemrxiv.15006143/v2},
+  eprint  = {https://chemrxiv.org/doi/pdf/10.26434/chemrxiv.15006143/v2}
 }
 ```
 
