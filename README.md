@@ -29,15 +29,9 @@ where $|\Psi^\pm\rangle=(|01\rangle\pm|10\rangle)/\sqrt{2}$. Because $\iota_p$ i
 
 The one-electron hopping term maps to a fused operator: a ladder move on the logical register $\mathcal{H}_L$, sandwiched between an update and a read on the parity register $\mathcal{H}_P$, each of weight $\mathcal{O}(\log N)$:
 
-$$
-\hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}
-\;\longmapsto\;
-\hat{M}_{pq}^{\sigma}
-=
-\underbrace{\Bigl(\bigotimes_{j\in F(p,q)}(\hat{U}_{R,4})^2_{j}\Bigr)}_{\text{update }\mathcal{H}_P}
-\underbrace{\bigl(\hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}\bigr)_{\mathcal{H}_L}}_{\text{move}\,+\,\text{intra-orbital sign}}
-\underbrace{\Bigl(\bigotimes_{j\in R(p,q)}\hat{Z}_{4,j}\Bigr)}_{\text{read }\mathcal{H}_P},
-$$
+```math
+\hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}\;\longmapsto\;\hat{M}_{pq}^{\sigma}=\underbrace{\Bigl(\bigotimes_{j\in F(p,q)}(\hat{U}_{R,4})_{j}^{2}\Bigr)}_{\text{update }\mathcal{H}_P}\underbrace{\bigl(\hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}\bigr)_{\mathcal{H}_L}}_{\text{move}\,+\,\text{intra-orbital sign}}\underbrace{\Bigl(\bigotimes_{j\in R(p,q)}\hat{Z}_{4,j}\Bigr)}_{\text{read }\mathcal{H}_P}
+```
 
 applied right-to-left, with $|F(p,q)|,\,|R(p,q)| = \mathcal{O}(\log N)$ (Fenwick-tree node sets), plus h.c. The intra-orbital sign is carried locally by the quarter-turn phase $\omega_4^k=i^k$ of the tetralemmatic basis; the inter-orbital sign is supplied by the $\hat{Z}_4$ read over $R(p,q)$. This replaces the $\mathcal{O}(N)$-length Jordan–Wigner string with an $\mathcal{O}(\log N)$-weight read — a genuine reduction, not an elimination. A bare two-qudit rotation on $\mathcal{H}_L$ alone cannot represent the term (inter-orbital obstruction); the $\mathcal{H}_P$ update and read factors are mandatory. Depth is $\mathcal{O}(\log N)$ per one-body term.
 
