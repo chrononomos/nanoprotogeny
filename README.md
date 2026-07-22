@@ -8,7 +8,9 @@
 
 `nanoprotogeny` is the open-source implementation of the **Modular Quantum Emulator (MQE)**, a quantum architecture designed for the chemically accurate, dynamical emulation of multi-step fermionic catalytic mechanisms. Built upon Google Cirq, the IonQ API, and PySCF, this pipeline shifts the computational paradigm from static variational minimization to exact, polynomially-bounded trajectory emulation on near-term trapped-ion hardware.
 
-## Universal Fock Isomorphism and JW Elimination
+> **Reference.** This software accompanies the pre-print: Santos C. Borom, *The Modular Quantum Emulator: Chemically Accurate, Polynomial-Cost Simulation of Multi-Step Metalloenzyme Catalysis in a Dissipative Protein Environment*, ChemRxiv (2026), [doi:10.26434/chemrxiv.15006143/v1](https://doi.org/10.26434/chemrxiv.15006143/v1). The claims and figures below track that pre-print; see [Citation](#citation) to reference the paper and the code.
+
+## Universal Fock Isomorphism and Jordan–Wigner Reduction
 
 The architectural cornerstone of MQE is the **Universal Fock Isomorphism** $\iota_p : \mathcal{F}_p \xrightarrow{\,\sim\,} \mathbb{C}^4$, a site-local bijection mapping the four-dimensional Fock space of a single spin-$\frac{1}{2}$ orbital onto a $d=4$ qudit register. The tetralemmatic encoding is defined as:
 
@@ -21,43 +23,46 @@ $$
 \end{aligned}
 $$
 
-where $|\Psi^\pm\rangle=(|01\rangle\pm|10\rangle)/\sqrt{2}$. Because $\iota_p$ is site-local and unitary, the fermionic exchange sign is absorbed into the local antisymmetric Bell state $|\mathbf{HoloTh}\rangle = |\Psi^-\rangle$ at each site. **No non-local parity string is required; the Jordan-Wigner string is eliminated entirely.**
+where $|\Psi^\pm\rangle=(|01\rangle\pm|10\rangle)/\sqrt{2}$. Because $\iota_p$ is site-local and unitary, the *intra*-orbital exchange sign is absorbed locally at each site. **The intra-orbital Jordan–Wigner string is eliminated exactly; the non-local *inter*-orbital string is not removed but *compressed* to an $\mathcal{O}(\log N)$-weight $\hat{Z}_4$ read on a dedicated $d=4$ parity register** (a Fenwick / Bravyi–Kitaev tree), strictly within the native $d=4$ Heisenberg–Weyl gate set. This is the honest scope of the reduction: a bare two-qudit hopping operator provably *cannot* represent the inter-orbital term, so the parity register — one $d=4$ qudit per orbital — is mandatory. The fermionic core therefore occupies $2N$ $d=4$ qudits ($N$ logical $+$ $N$ parity), not $N$.
 
-### Hopping Term Elimination
+### Hopping Term Reduction
 
-The one-electron hopping term maps to a strictly local two-qudit operator with circuit depth $\mathcal{O}(1)$:
+The one-electron hopping term maps to local ladder factors on the logical register $\mathcal{H}_L$ dressed by an $\mathcal{O}(\log N)$-weight parity read on the parity register $\mathcal{H}_P$:
 
 $$
 \hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}+\mathrm{h.c.}
-\;\xmapsto{\iota_p\otimes\iota_q}\;
-\hat{U}_{R,\sigma}^{(p)}\otimes\hat{U}_{R,\sigma}^{\dagger(q)},
+\;\xmapsto{\;\text{tripartite encoding}\;}\;
+\underbrace{\hat{U}_{R,\sigma}^{(p)}\otimes\hat{U}_{R,\sigma}^{\dagger(q)}}_{\text{local ladder on }\mathcal{H}_L}
+\;\otimes\;
+\underbrace{\hat{Z}_4^{\,R(p,q)}}_{\mathcal{O}(\log N)\text{ read on }\mathcal{H}_P}.
 $$
 
-acting exclusively on $\mathcal{H}_p\otimes\mathcal{H}_q$. No ancillary site $r\notin\{p,q\}$ participates. The quarter-turn phase $\omega_4^k=i^k$ embedded in the tetralemmatic basis tracks the local parity at each site independently, reproducing the sign that JW would assign via a $\hat{Z}$-string over all intermediate sites.
+The intra-orbital sign is carried locally by the quarter-turn phase $\omega_4^k=i^k$ of the tetralemmatic basis; the inter-orbital sign is supplied by the $\hat{Z}_4$ read over the $\mathcal{O}(\log N)$ Fenwick-tree node set $R(p,q)$. This replaces the $\mathcal{O}(N)$-length Jordan–Wigner string with an $\mathcal{O}(\log N)$-weight read — a genuine reduction, not an elimination. A bare two-qudit operator $\hat{U}_{R,\sigma}^{(p)}\otimes\hat{U}_{R,\sigma}^{\dagger(q)}$ alone cannot represent the term (inter-orbital obstruction). Depth is $\mathcal{O}(\log N)$ per one-body term.
 
-### Coulomb Term Elimination
+### Coulomb Term (String-Free)
 
-The Trotter factor for the two-electron repulsion is realized by a constant-depth shift-sandwich circuit:
+Unlike the hopping term, the density–density repulsion is diagonal in occupation and its Jordan–Wigner strings cancel identically, so it requires **no** parity register. The Trotter factor is a single diagonal two-qudit phase using the *physical* occupations $\hat{n}=\operatorname{diag}(0,1,1,2)$ (not the qudit index):
 
 $$
 e^{i\theta_{pq}\hat{n}_p\hat{n}_q}
 \;=\;
-\hat{S}_{p\to q}\cdot\hat{C}_{p,q}(\theta_{pq})\cdot\hat{S}_{p\to q}^\dagger,
+\exp\!\Bigl(i\theta_{pq}\,\operatorname{diag}(0,1,1,2)_p \otimes \operatorname{diag}(0,1,1,2)_q\Bigr),
 $$
 
-where $\hat{S}_{p\to q}:|k\rangle_p|j\rangle_q\mapsto|k\rangle_p|j{+}k\bmod4\rangle_q$ and $\hat{C}_{p,q}(\theta_{pq})=I_p\otimes\operatorname{diag}(1,e^{i\theta_{pq}}, e^{2i\theta_{pq}},e^{3i\theta_{pq}})_q$. Each of $\hat{S}$, $\hat{C}$, $\hat{S}^\dagger$ is a single two-qudit gate; total depth is $\mathcal{O}(1)$ per pair.
+acting on $\mathcal{H}_L^{(p)}\otimes\mathcal{H}_L^{(q)}$ at depth $\mathcal{O}(1)$ per pair. (Using the qudit index $0,1,2,3$ in place of the physical occupations $0,1,1,2$ is the naïve, incorrect form; the correction to physical occupations is required for a faithful encoding.)
 
 ### Resource Reduction
 
 For an active space with $N$ spatial orbitals:
 
-| Resource | Jordan-Wigner | MQE (Tetralemmatic) |
+| Resource | Jordan–Wigner | MQE (Tetralemmatic + parity register) |
 | :--- | :--- | :--- |
-| Entangling gate count | $\mathcal{O}(N^4)$ | $\mathcal{O}(N^2)$ |
-| Circuit depth per term | $\mathcal{O}(N)$ | $\mathcal{O}(1)$ |
-| Total Trotter-step depth | $\mathcal{O}(N^2)$ | $\mathcal{O}(N)$ (all-to-all) |
+| One-body (hopping) depth | $\mathcal{O}(N)$ | $\mathcal{O}(\log N)$ |
+| Two-body (Coulomb) depth | $\mathcal{O}(N)$ | $\mathcal{O}(1)$ (string-free) |
+| Trotter-step gate count | $\mathcal{O}(N^4)$ | $\mathcal{O}(N^2 \log N)$ |
+| Qudit footprint (fermionic core) | $N$ (qubits) | $2N$ $d{=}4$ ($N$ logical $+$ $N$ parity) |
 
-For the FeMoco $(113e, 76o)$ active space, this reduces $\sim 10^7$ Coulomb parity strings to $\sim 5.8\times10^3$ local modular-addition gates.
+The one-body speedup is a compression of the $\mathcal{O}(N)$ Jordan–Wigner string to an $\mathcal{O}(\log N)$ parity read; the two-body term is genuinely string-free at $\mathcal{O}(1)$. For the FeMoco $(113e, 76o)$ active space, point-group screening reduces the $\sim 3.3\times10^7$ two-electron scattering channels to $\sim 5.8\times10^3$ dominant $\mathcal{O}(N^2)$ pairs, each a constant-depth modular-addition gate, while each one-body term carries an $\mathcal{O}(\log N)$ parity read.
 
 ## Zero-Overhead Quantum Phase Estimation
 
@@ -84,30 +89,23 @@ $$
 \nu \;\longleftrightarrow\; \frac{mE\tau}{2\pi}.
 $$
 
-The two group actions are not analogous—they are identical. Ancilla overhead is identically zero. For composite $m=4r$, precision is $(2+\lceil\log_2 r\rceil)$ bits at zero additional hardware cost.
+The two group actions are not analogous—they are identical. QPE therefore adds **no clock ancilla**: it reuses the catalytic register that stoichiometric bookkeeping already makes mandatory (this zero-overhead is distinct from the fermionic-core parity register, which is a separate, mandatory $N$-qudit resource). For composite $m=4r$, precision is $(2+\lceil\log_2 r\rceil)$ bits at zero additional clock hardware.
 
 ## Universal Polynomial Complexity
 
-For any fermionic catalytic mechanism $\mathfrak{M}$ with $N$ active orbitals, $M$ discrete steps, $n_\mathrm{cross}$ non-adiabatic crossings, Trotter order $T$, interaction constant $C_\mathrm{int}$, and target accuracy $\epsilon$:
+For any fermionic catalytic mechanism $\mathfrak{M}$ with $N$ active orbitals, $M$ discrete steps, $n_\mathrm{cross}$ non-adiabatic crossings, Trotter order $T$, double-commutator interaction constant $C^{(2)}_\mathrm{int}$, and target accuracy $\epsilon$, the second-order (Suzuki–Trotter) pipeline actually executed satisfies:
 
 $$
 \begin{aligned}
-G(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^3T^2C_\mathrm{int}}{\epsilon}\right), \\
-D(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^2T^2C_\mathrm{int}}{\epsilon} + n_\mathrm{cross}\right), \\
+G(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^{7/2}\,T\sqrt{C^{(2)}_\mathrm{int}}\,\log N}{\sqrt{\epsilon}}\right), \\
+D(\mathfrak{M}) &= \mathcal{O}\left(\frac{MN^{5/2}\,T\sqrt{C^{(2)}_\mathrm{int}}\,\log N}{\sqrt{\epsilon}} + n_\mathrm{cross}\right), \\
 N_\mathrm{shots} &= \mathcal{O}\left(\frac{1}{\epsilon^2}\right).
 \end{aligned}
 $$
 
-All three bounds are strictly polynomial in $N$, $M$, $T$, $\epsilon^{-1}$, $n_\mathrm{cross}$, and $C_\mathrm{int}$. The virtual register dimension $m$ contributes only a constant multiplicative factor $\mathcal{O}(\log m)$ via Solovay-Kitaev decomposition; it does not alter the asymptotic class.
+All three bounds are strictly polynomial in $N$, $M$, $T$, $\epsilon^{-1}$, $n_\mathrm{cross}$, and $C^{(2)}_\mathrm{int}$. The $\log N$ factor is the Jordan–Wigner parity read — polylogarithmic, and it does not affect the polynomial class. The virtual register dimension $m$ contributes only a constant multiplicative $\mathcal{O}(\log m)$ (Solovay–Kitaev) to the virtual-sector decomposition; it does not alter the asymptotic class. Because the auxiliary sector is algebraically independent of the electronic Hamiltonian, the eight extensions (nuclear quantum effects, relativistic and spin–orbit coupling, open-system dissipation, periodic boundary conditions, and more) are absorbed under a single unified certificate $G^{\mathrm{ext}}=\mathcal{O}(MN^{7/2}T\sqrt{C^{(2)}_\mathrm{int}}/\sqrt{\epsilon})$ without changing the complexity class.
 
-The quantum advantage over classical FCI grows super-exponentially:
-
-$$
-\frac{\text{Classical FCI}}{\text{MQE}}
-= \Omega\left(\frac{e^{2N}}{P\cdot MN^3T^2C_{\mathrm{int}}/\epsilon}\right).
-$$
-
-For the FeMoco active space ($N=76$, $N_e=113$), this ratio is approximately $5\times10^{27}$.
+The advantage over classical exact methods is the contrast between an **exponential** and a **polynomial** cost. Exact real-time, non-adiabatic propagation of the FeMoco $(113e, 76o)$ active space by Full Configuration Interaction requires a Hilbert space of dimension $>10^{36}$ and the evaluation of $\sim 3.3\times10^7$ irreducible two-electron channels; the MQE cost is bounded by the strictly polynomial $G,\,D,\,N_\mathrm{shots}$ above.
 
 ## Validation
 
@@ -804,7 +802,28 @@ mqe generate-data --mechanism nitrogenase_lt \
 ```
 
 
-## If you have found this software useful in your research work, cite:
+<a name="citation"></a>
+## Citation
+
+If you use this work, please cite **both** the paper and the software.
+
+**Paper (pre-print):**
+```bibtex
+@article{BoromMQE,
+  author  = {Borom, Santos C.},
+  title   = {The Modular Quantum Emulator: Chemically Accurate,
+             Polynomial-Cost Simulation of Multi-Step Metalloenzyme
+             Catalysis in a Dissipative Protein Environment},
+  journal = {ChemRxiv},
+  volume  = {2026},
+  number  = {0716},
+  year    = {2026},
+  doi     = {10.26434/chemrxiv.15006143/v1},
+  url     = {https://chemrxiv.org/doi/abs/10.26434/chemrxiv.15006143/v1}
+}
+```
+
+**Software:**
 ```bibtex
 @misc{borom_mqe_2026,
   author       = {Borom, Santos C.},
@@ -812,7 +831,7 @@ mqe generate-data --mechanism nitrogenase_lt \
   year         = {2026},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.21348354},
-  url          = {[https://doi.org/10.5281/zenodo.21348354](https://doi.org/10.5281/zenodo.21348354)},
+  url          = {https://doi.org/10.5281/zenodo.21348354},
   note         = {Computer software}
 }
 ```
