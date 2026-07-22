@@ -27,26 +27,28 @@ where $|\Psi^\pm\rangle=(|01\rangle\pm|10\rangle)/\sqrt{2}$. Because $\iota_p$ i
 
 ### Hopping Term Reduction
 
-The one-electron hopping term maps to local ladder factors on the logical register $\mathcal{H}_L$ dressed by an $\mathcal{O}(\log N)$-weight parity read on the parity register $\mathcal{H}_P$:
+The one-electron hopping term maps to a fused operator: a ladder move on the logical register $\mathcal{H}_L$, sandwiched between an update and a read on the parity register $\mathcal{H}_P$, each of weight $\mathcal{O}(\log N)$:
 
 $$
-\hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}+\mathrm{h.c.}
-\;\xmapsto{\;\text{tripartite encoding}\;}\;
-\underbrace{\hat{U}_{R,\sigma}^{(p)}\otimes\hat{U}_{R,\sigma}^{\dagger(q)}}_{\text{local ladder on }\mathcal{H}_L}
-\;\otimes\;
-\underbrace{\hat{Z}_4^{\,R(p,q)}}_{\mathcal{O}(\log N)\text{ read on }\mathcal{H}_P}.
+\hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}
+\;\longmapsto\;
+\hat{M}_{pq}^{\sigma}
+=
+\underbrace{\Bigl(\bigotimes_{j\in F(p,q)}(\hat{U}_{R,4})^2_{j}\Bigr)}_{\text{update }\mathcal{H}_P}
+\underbrace{\bigl(\hat{a}_{p\sigma}^\dagger\hat{a}_{q\sigma}\bigr)_{\mathcal{H}_L}}_{\text{move}\,+\,\text{intra-orbital sign}}
+\underbrace{\Bigl(\bigotimes_{j\in R(p,q)}\hat{Z}_{4,j}\Bigr)}_{\text{read }\mathcal{H}_P},
 $$
 
-The intra-orbital sign is carried locally by the quarter-turn phase $\omega_4^k=i^k$ of the tetralemmatic basis; the inter-orbital sign is supplied by the $\hat{Z}_4$ read over the $\mathcal{O}(\log N)$ Fenwick-tree node set $R(p,q)$. This replaces the $\mathcal{O}(N)$-length Jordan–Wigner string with an $\mathcal{O}(\log N)$-weight read — a genuine reduction, not an elimination. A bare two-qudit operator $\hat{U}_{R,\sigma}^{(p)}\otimes\hat{U}_{R,\sigma}^{\dagger(q)}$ alone cannot represent the term (inter-orbital obstruction). Depth is $\mathcal{O}(\log N)$ per one-body term.
+applied right-to-left, with $|F(p,q)|,\,|R(p,q)| = \mathcal{O}(\log N)$ (Fenwick-tree node sets), plus h.c. The intra-orbital sign is carried locally by the quarter-turn phase $\omega_4^k=i^k$ of the tetralemmatic basis; the inter-orbital sign is supplied by the $\hat{Z}_4$ read over $R(p,q)$. This replaces the $\mathcal{O}(N)$-length Jordan–Wigner string with an $\mathcal{O}(\log N)$-weight read — a genuine reduction, not an elimination. A bare two-qudit rotation on $\mathcal{H}_L$ alone cannot represent the term (inter-orbital obstruction); the $\mathcal{H}_P$ update and read factors are mandatory. Depth is $\mathcal{O}(\log N)$ per one-body term.
 
 ### Coulomb Term (String-Free)
 
-Unlike the hopping term, the density–density repulsion is diagonal in occupation and its Jordan–Wigner strings cancel identically, so it requires **no** parity register. The Trotter factor is a single diagonal two-qudit phase using the *physical* occupations $\hat{n}=\operatorname{diag}(0,1,1,2)$ (not the qudit index):
+Unlike the hopping term, the density–density repulsion is diagonal in occupation and its Jordan–Wigner strings cancel identically, so it requires **no** parity register. The Trotter factor is a single diagonal two-qudit phase using the *physical* occupations $\hat{n}=\mathrm{diag}(0,1,1,2)$ (not the qudit index):
 
 $$
 e^{i\theta_{pq}\hat{n}_p\hat{n}_q}
 \;=\;
-\exp\!\Bigl(i\theta_{pq}\,\operatorname{diag}(0,1,1,2)_p \otimes \operatorname{diag}(0,1,1,2)_q\Bigr),
+\exp\!\Bigl(i\theta_{pq}\,\mathrm{diag}(0,1,1,2)_p \otimes \mathrm{diag}(0,1,1,2)_q\Bigr),
 $$
 
 acting on $\mathcal{H}_L^{(p)}\otimes\mathcal{H}_L^{(q)}$ at depth $\mathcal{O}(1)$ per pair. (Using the qudit index $0,1,2,3$ in place of the physical occupations $0,1,1,2$ is the naïve, incorrect form; the correction to physical occupations is required for a faithful encoding.)
